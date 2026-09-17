@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#0a0d12">
 <title>NoteOS</title>
 <style>
-/* ============ NoteOS 6.4.4 — Fluido · Sonido real · Liquid Glass ============ */
+/* ============ NoteOS 6.5.0 — Fluido · Sonido real · Liquid Glass ============ */
 :root{
   --accent:#3d9e9a; --accent-rgb:61,158,154;
   --accent2:#e8a84a; --accent2-rgb:232,168,74;
@@ -117,7 +117,7 @@ kbd{background:rgba(128,138,152,.2);border-radius:5px;padding:1px 6px;font-size:
 .w-lavanda{background-image:linear-gradient(155deg,#3d3a52 0%,#6a5f7d 45%,#a08ba0 78%,#cbb6bd 100%)}
 .w-marina{background-image:linear-gradient(170deg,#16303c 0%,#28536048 40%,#28535f 41%,#5b8390 78%,#a2bcc2 100%)}
 
-/* NoteOS 6.4.4 — fondos propios */
+/* NoteOS 6.5.0 — fondos propios */
 .w-lyn{background-image:radial-gradient(140% 100% at 20% 10%,#2a6b6a 0%,#1a3d4a 35%,#0f1c28 70%,#0a1018 100%)}
 .w-aurora{background-image:linear-gradient(165deg,#0f1a2e 0%,#1a3a4a 30%,#2a5c5a 55%,#3d7a6a 80%,#1a3040 100%)}
 .w-nebula{background-image:radial-gradient(120% 90% at 70% 20%,#3a2a5c 0%,#1e1a3a 40%,#12101f 75%,#0a0a12 100%)}
@@ -623,7 +623,7 @@ table.grid-table{border-collapse:collapse;font-size:13px}
 .dicon .ig svg{filter:drop-shadow(0 4px 7px rgba(0,0,0,.4))}
 .spot-item .si svg{width:24px;height:24px}
 .list-row svg{width:22px;height:22px;flex:none}
-/* (settings CSS moved to 6.4.4 block) */
+/* (settings CSS moved to 6.5.0 block) */
 .sh{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:650;margin:16px 2px 8px}
 .sh:first-of-type{margin-top:2px}
 .color-dot{width:32px;height:32px;border-radius:50%;border:2.5px solid transparent;transition:transform .18s var(--spring),border-color .15s;box-shadow:inset 0 2px 4px rgba(255,255,255,.25),0 2px 6px rgba(0,0,0,.3)}
@@ -644,7 +644,7 @@ table.grid-table{border-collapse:collapse;font-size:13px}
 .lockstyle-card .prev{font-size:24px;line-height:1}
 .lockstyle-card small{color:var(--muted);font-size:11px}
 
-/* ===== NoteOS 6.4.4 — animaciones propias ===== */
+/* ===== NoteOS 6.5.0 — animaciones propias ===== */
 @keyframes noteIn{from{opacity:0;transform:translateY(20px) scale(.92)}to{opacity:1;transform:none}}
 @keyframes noteOut{to{opacity:0;transform:translateY(12px) scale(.94)}}
 @keyframes dockRise{from{transform:translateY(30px);opacity:0}to{transform:none;opacity:1}}
@@ -712,7 +712,7 @@ input[type=range]{accent-color:var(--accent)}
 
 
 
-/* ========== LIRA 6.4.4 — orbe flotante sin panel ========== */
+/* ========== LIRA 6.5.0 — orbe flotante sin panel ========== */
 #aura.lyra-overlay{
   position:fixed;inset:0;z-index:95000;
   display:flex;align-items:center;justify-content:center;
@@ -967,7 +967,7 @@ body.is-mobile .desk-only{display:none!important}
 
 /* Settings 6.3 redesign */
 
-/* ===== Configuración 6.4.4 — diseño premium ===== */
+/* ===== Configuración 6.5.0 — diseño premium ===== */
 .form-row{
   display:flex;align-items:center;justify-content:space-between;gap:16px;
   padding:12px 14px;font-size:13.5px;
@@ -1430,7 +1430,7 @@ body.reduce-motion #lowbatt-fx .lbf-edge,
 body.reduce-motion #tb-battery.low{animation:none!important}
 body.reduce-motion #lowbatt-fx .lbf-batt-fill{animation:none!important}
 
-/* 6.4.4 performance + fluid UI */
+/* 6.5.0 performance + fluid UI */
 .win,.dock,.topbar,.glass{
   transform:translateZ(0);
   backface-visibility:hidden;
@@ -1788,11 +1788,11 @@ body.reduce-motion #dim-fx .dim-stars i{animation:none!important}
   <div class="dim-core">
     <div class="dim-logo" id="dim-logo"></div>
     <div class="dim-title">NoteOS</div>
-    <div class="dim-sub">Liquid Glass · 6.4.4</div>
+    <div class="dim-sub">Liquid Glass · 6.5.0</div>
   </div>
 </div>
 
-<div id="boot"><div class="logo"><span class="mark"></span>LYNOR</div><div class="bar"><i id="boot-bar"></i></div><div class="msg" id="boot-msg">Iniciando</div><div style="position:absolute;bottom:34px;color:#4a5560;font-size:11px;letter-spacing:.22em;text-transform:uppercase">NoteOS · 6.4.4</div></div>
+<div id="boot"><div class="logo"><span class="mark"></span>LYNOR</div><div class="bar"><i id="boot-bar"></i></div><div class="msg" id="boot-msg">Iniciando</div><div style="position:absolute;bottom:34px;color:#4a5560;font-size:11px;letter-spacing:.22em;text-transform:uppercase">NoteOS · 6.5.0</div></div>
 
 <div id="setup" class="hidden"><div class="card setup-card">
   <div class="setup-brand">
@@ -1902,10 +1902,10 @@ body.reduce-motion #dim-fx .dim-stars i{animation:none!important}
 <input type="file" id="file-import" multiple class="hidden">
 <script>
 "use strict";
-/* ================= NoteOS 6.4.4 — núcleo ================= */
+/* ================= NoteOS 6.5.0 — núcleo ================= */
 const LYRA_ORB_SRC="data:image/webp;base64,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";
 
-/* ===== NoteOS 6.4.4 — rendimiento ===== */
+/* ===== NoteOS 6.5.0 — rendimiento ===== */
 const Perf={
   rafThrottle(fn){
     let locked=false,args=null;
@@ -1947,7 +1947,7 @@ function showShortcuts(){
 
 
 
-/* Session resume 6.4.4 */
+/* Session resume 6.5.0 */
 function rememberApp(id){
   try{
     if(!id||id==="settings"&&false){}
@@ -1969,7 +1969,7 @@ async function restoreSession(){
 }
 
 
-/* 6.4.4 — pausar trabajo en segundo plano */
+/* 6.5.0 — pausar trabajo en segundo plano */
 document.addEventListener("visibilitychange",()=>{
   try{
     if(document.hidden){
@@ -2023,7 +2023,7 @@ async function sha256(str){
 
 /* ============ Sonido del sistema (sintetizado, real) ============ */
 const Snd={ctx:null,gain:null,_cache:{},
-  /* 6.4.4 — solo clips reales (MyInstants). Sin tonos sintéticos que se mezclan. */
+  /* 6.5.0 — solo clips reales (MyInstants). Sin tonos sintéticos que se mezclan. */
   ensure(){if(!this.ctx){this.ctx=new (window.AudioContext||window.webkitAudioContext)();this.gain=this.ctx.createGain();this.gain.connect(this.ctx.destination);this.gain.gain.value=S.volume}if(this.ctx.state==="suspended")this.ctx.resume()},
   setVol(v){if(this.gain)this.gain.gain.value=v},
   /* tonos desactivados a propósito: no se usan en UI */
@@ -2083,8 +2083,8 @@ const PLATFORM=(function(){
     mobile,
     desktop:!mobile,
     name: mobile?"AirOS":"NoteOS",
-    version:"6.4.4",
-    full: mobile?"AirOS 6.4.4":"NoteOS 6.4.4"
+    version:"6.5.0",
+    full: mobile?"AirOS 6.5.0":"NoteOS 6.5.0"
   };
 })();
 document.documentElement.classList.add(PLATFORM.mobile?"is-mobile":"is-desktop");
@@ -2244,7 +2244,7 @@ function applyNoteosMarks(){
 }
 
 
-const S_DEF={theme:"dark",accent:"#3d9e9a",wallpaper:"ph-dune1",customWall:null,wallAnimated:false,blur:28,glassA:.55,fontScale:1,iconSize:76,dockSize:54,animSpeed:1,reduceMotion:false,highContrast:false,bigCursor:false,clock24:true,showSeconds:false,lockStyle:"grande",lockColor:"",lockSize:100,lockShowDate:true,lockShowWeather:true,lockWall:"ph-dune1",lockWallImg:null,autoLock:0,brightness:100,night:false,volume:.7,uiSounds:true,dnd:false,dateLong:true,firstDay:1,auraVoiceURI:"",auraSpeak:true,perfMode:false,iconStyle:"normal",iconTint:"#3d9e9a",installed:{},version:"6.4.4",updateUrl:"",updateChannel:"stable",autoCheckUpdates:true,lastUpdateCheck:0,sessionApps:[],focusMode:false,quietHours:false};
+const S_DEF={theme:"dark",accent:"#3d9e9a",wallpaper:"ph-dune1",customWall:null,wallAnimated:false,blur:28,glassA:.55,fontScale:1,iconSize:76,dockSize:54,animSpeed:1,reduceMotion:false,highContrast:false,bigCursor:false,clock24:true,showSeconds:false,lockStyle:"grande",lockColor:"",lockSize:100,lockShowDate:true,lockShowWeather:true,lockWall:"ph-dune1",lockWallImg:null,autoLock:0,brightness:100,night:false,volume:.7,uiSounds:true,dnd:false,dateLong:true,firstDay:1,auraVoiceURI:"",auraSpeak:true,perfMode:false,iconStyle:"normal",iconTint:"#3d9e9a",installed:{},version:"6.5.0",updateUrl:"",updateChannel:"stable",autoCheckUpdates:true,lastUpdateCheck:0,sessionApps:[],focusMode:false,quietHours:false};
 let S={...S_DEF};
 const ACCENTS=[["Teal","#3d9e9a"],["Ámbar","#e8a84a"],["Índigo","#5b7fd4"],["Coral","#e07a6a"],["Salvia","#6aad8a"],["Violeta","#8b7ab8"],["Grafito","#7a8494"]];
 const WALLS=[
@@ -4277,6 +4277,7 @@ function mountPhotos(win,args={}){
   win.body.innerHTML="";
   win.toolbar([
     {label:"Importar fotos",onclick:async()=>{const fs=await pickFiles("image/*",true);await importRealFiles(fs,"pics");refresh()}},
+    {label:"Borrar objeto",onclick:()=>toast("Fotos","Abre una foto → Editar en Pinceles → herramienta ✨ Borrar objeto. Pinta sobre lo que quieras quitar y suelta.","✨",{force:true})},
   ]);
   const grid=h("div");grid.style.cssText="flex:1;overflow:auto;padding:14px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;align-content:start";
   win.body.appendChild(grid);
@@ -4294,6 +4295,7 @@ function mountPhotos(win,args={}){
       card.oncontextmenu=e=>{e.preventDefault();ctxMenu(e.clientX,e.clientY,[
         {label:"Ver",icon:"👁️",fn:()=>lightbox(f,url)},
         {label:"Editar en Pinceles",icon:"🎨",fn:()=>WM.open("paint",{file:f.id})},
+        {label:"Borrar objeto…",icon:"✨",fn:()=>WM.open("paint",{file:f.id,tool:"objerase"})},
         {label:"Usar como fondo de pantalla",icon:"🖥️",fn:async()=>{const dURL=await blobToDataURL(await fileBlob(f));S.wallpaper="custom";S.customWall=dURL;applyS();saveS();toast("Fotos","Fondo de pantalla actualizado","🖼️")}},
         {label:"Descargar",icon:"⬇",fn:async()=>download(f.name,await fileBlob(f))},
         {label:"Mover a la papelera",icon:"🗑️",fn:async()=>{await fsTrash(f.id);refresh()}}])};
@@ -4585,6 +4587,39 @@ function mountMusic(win,args={}){
 }
 
 
+
+function contentAwareErase(ctx,maskCanvas,passes=14){
+  const w=ctx.canvas.width,h=ctx.canvas.height;
+  const img=ctx.getImageData(0,0,w,h);const d=img.data;
+  const mask=maskCanvas.getContext("2d").getImageData(0,0,w,h).data;
+  const isM=(x,y)=>{if(x<0||y<0||x>=w||y>=h)return false;return mask[(y*w+x)*4+3]>30};
+  const filled=new Uint8Array(w*h);
+  for(let y=0;y<h;y++)for(let x=0;x<w;x++)if(!isM(x,y))filled[y*w+x]=1;
+  const dirs=[[-1,0],[1,0],[0,-1],[0,1],[-1,-1],[1,-1],[-1,1],[1,1],[-2,0],[2,0],[0,-2],[0,2],[-2,-1],[2,1],[-1,-2],[1,2]];
+  for(let pass=0;pass<passes;pass++){
+    const batch=[];
+    for(let y=0;y<h;y++)for(let x=0;x<w;x++){
+      const i=y*w+x;if(filled[i])continue;
+      let r=0,g=0,b=0,n=0;
+      for(const[dx,dy]of dirs){
+        const nx=x+dx,ny=y+dy;if(nx<0||ny<0||nx>=w||ny>=h)continue;
+        const j=ny*w+nx;if(!filled[j])continue;
+        const p=j*4;r+=d[p];g+=d[p+1];b+=d[p+2];n++;
+      }
+      if(n>=2)batch.push([x,y,r/n,g/n,b/n]);
+    }
+    if(!batch.length)break;
+    for(const[x,y,r,g,b]of batch){const p=(y*w+x)*4;d[p]=r;d[p+1]=g;d[p+2]=b;d[p+3]=255;filled[y*w+x]=1}
+  }
+  for(let y=1;y<h-1;y++)for(let x=1;x<w-1;x++){
+    if(!isM(x,y))continue;
+    let r=0,g=0,b=0,n=0;
+    for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){const p=((y+dy)*w+(x+dx))*4;r+=d[p];g+=d[p+1];b+=d[p+2];n++}
+    const p=(y*w+x)*4;d[p]=r/n;d[p+1]=g/n;d[p+2]=b/n;
+  }
+  ctx.putImageData(img,0,0);
+}
+
 /* ---- Pinceles (editor de imágenes) ---- */
 function mountPaint(win,args={}){
   win.body.innerHTML="";
@@ -4593,7 +4628,8 @@ function mountPaint(win,args={}){
   cv.style.cssText="background:#fff;border-radius:10px;box-shadow:var(--shadow);max-width:100%;max-height:100%;cursor:crosshair;touch-action:none";
   const ctx=cv.getContext("2d",{willReadFrequently:true});
   ctx.fillStyle="#fff";ctx.fillRect(0,0,cv.width,cv.height);
-  const tools=[["brush","🖌️","Pincel"],["line","／","Línea"],["rect","▭","Rectángulo"],["circle","◯","Círculo"],["eraser","🧽","Borrador"],["fill","🪣","Rellenar todo"]];
+  const maskCv=document.createElement("canvas");maskCv.width=cv.width;maskCv.height=cv.height;const maskCtx=maskCv.getContext("2d");
+  const tools=[["brush","🖌️","Pincel"],["line","／","Línea"],["rect","▭","Rectángulo"],["circle","◯","Círculo"],["eraser","🧽","Borrador"],["objerase","✨","Borrar objeto"],["fill","🪣","Rellenar todo"]];
   const colorInp=h("input");colorInp.type="color";colorInp.value=color;colorInp.style.cssText="width:34px;height:26px;padding:2px;border-radius:8px";
   colorInp.oninput=()=>color=colorInp.value;
   const sizeInp=h("input");sizeInp.type="range";sizeInp.min=1;sizeInp.max=40;sizeInp.value=size;sizeInp.style.width="90px";
@@ -4618,10 +4654,23 @@ function mountPaint(win,args={}){
   function pos(e){const r=cv.getBoundingClientRect();return[(e.clientX-r.left)*cv.width/r.width,(e.clientY-r.top)*cv.height/r.height]}
   cv.onpointerdown=e=>{cv.setPointerCapture(e.pointerId);drawing=true;[sx,sy]=pos(e);
     snap=ctx.getImageData(0,0,cv.width,cv.height);
-    if(tool==="fill"){ctx.fillStyle=color;ctx.fillRect(0,0,cv.width,cv.height);drawing=false}
+    if(tool==="fill"){ctx.fillStyle=color;ctx.fillRect(0,0,cv.width,cv.height);drawing=false;return}
+    if(tool==="objerase"){
+      maskCtx.clearRect(0,0,maskCv.width,maskCv.height);
+      maskCtx.strokeStyle="rgba(255,0,80,.9)";maskCtx.fillStyle="rgba(255,0,80,.35)";
+      maskCtx.lineWidth=Math.max(size*2,12);maskCtx.lineCap="round";maskCtx.lineJoin="round";
+      maskCtx.beginPath();maskCtx.moveTo(sx,sy);
+      ctx.save();ctx.strokeStyle="rgba(255,40,100,.85)";ctx.lineWidth=Math.max(size*2,12);ctx.lineCap="round";
+      ctx.beginPath();ctx.moveTo(sx,sy);return;
+    }
     if(tool==="brush"||tool==="eraser"){ctx.beginPath();ctx.moveTo(sx,sy)}};
   cv.onpointermove=e=>{if(!drawing)return;const[x,y]=pos(e);
     ctx.lineWidth=size;ctx.lineCap="round";ctx.lineJoin="round";
+    if(tool==="objerase"){
+      maskCtx.lineTo(x,y);maskCtx.stroke();
+      ctx.lineTo(x,y);ctx.stroke();
+      return;
+    }
     ctx.strokeStyle=tool==="eraser"?"#fff":color;
     if(tool==="brush"||tool==="eraser"){ctx.lineTo(x,y);ctx.stroke()}
     else{ctx.putImageData(snap,0,0);ctx.beginPath();
@@ -4629,7 +4678,22 @@ function mountPaint(win,args={}){
       if(tool==="rect")ctx.rect(Math.min(sx,x),Math.min(sy,y),Math.abs(x-sx),Math.abs(y-sy));
       if(tool==="circle")ctx.arc(sx,sy,Math.hypot(x-sx,y-sy),0,Math.PI*2);
       ctx.stroke()}};
-  cv.onpointerup=()=>drawing=false;
+  cv.onpointerup=e=>{
+    if(drawing&&tool==="objerase"){
+      try{
+        maskCtx.lineTo(...pos(e));maskCtx.stroke();
+        maskCtx.closePath();
+        // thicken mask for solid region
+        const md=maskCtx.getImageData(0,0,maskCv.width,maskCv.height);
+        // restore snapshot then fill
+        ctx.putImageData(snap,0,0);
+        contentAwareErase(ctx,maskCv,16);
+        toast("Pinceles","Objeto eliminado y fondo reconstruido","✨",{silent:true});
+      }catch(err){ctx.putImageData(snap,0,0);toast("Pinceles","No se pudo borrar: "+(err.message||""),"!",{force:true})}
+      ctx.restore&&ctx.restore();
+    }
+    drawing=false;
+  };
   function filter(fn){const img=ctx.getImageData(0,0,cv.width,cv.height);const d=img.data;
     for(let i=0;i<d.length;i+=4)fn(d,i);ctx.putImageData(img,0,0)}
   async function load(f){fileId=null;win.setTitle("Pinceles — "+f.name);
@@ -4646,7 +4710,7 @@ function mountPaint(win,args={}){
 
 /* ---- Navegador ---- */
 function mountBrowser(win,args={}){
-  /* NoteOS 6.4.4 — navegador real: iframe + historial + favoritos + proxy de lectura */
+  /* NoteOS 6.5.0 — navegador real: iframe + historial + favoritos + proxy de lectura */
   win.body.innerHTML="";
   win.body.style.cssText="display:flex;flex-direction:column;min-height:0;background:var(--bg0)";
   const state={tabs:[],cur:-1,history:[],bmarks:[]};
@@ -4933,7 +4997,7 @@ function mountBrowser(win,args={}){
 }
 
 
-/* ========== Tienda NoteOS 6.4.4 — catálogo real ========== */
+/* ========== Tienda NoteOS 6.5.0 — catálogo real ========== */
 const STORE_ITEMS=[
   {id:"mines",name:"Buscaminas",category:"Juegos",version:"1.2.0",size:"48 KB",developer:"NoteOS Labs",
    desc:"Clásico buscaminas con dificultad ajustable. Marca banderas, abre celdas y supera récords locales.",
@@ -5248,7 +5312,7 @@ function mount2048(win){
 }
 
 
-/* ========== Apps Tienda 6.4.4 — implementaciones reales ========== */
+/* ========== Apps Tienda 6.5.0 — implementaciones reales ========== */
 function mountTetris(win){
   const W=10,H=20,CELL=22;
   const SHAPES={
@@ -5744,12 +5808,16 @@ function mountSettings(win,args={}){
   const inner=h("div","set-main-inner");main.appendChild(inner);
   let cur=args.panel||"apariencia",filter="";
   let groupEl=null;
+  let panelToken=0;
+  let sideBuilt=false;
+  const navHost=h("div");navHost.style.cssText="flex:1;overflow:auto;min-height:0;display:flex;flex-direction:column;gap:2px";
   const searchWrap=h("div","set-search-wrap");
   searchWrap.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>`;
   const search=h("input","set-search");search.type="search";search.placeholder="Buscar ajuste…";
   searchWrap.appendChild(search);
-  search.oninput=()=>{filter=search.value.toLowerCase();renderSide()};
-  function renderSide(){
+  search.oninput=()=>{filter=search.value.toLowerCase();renderSideNav()};
+  function ensureSideChrome(){
+    if(sideBuilt)return;
     side.innerHTML="";
     const brand=h("div","set-brand");
     const bm=makeNoteosMark("md",true);
@@ -5760,34 +5828,45 @@ function mountSettings(win,args={}){
     brand.appendChild(bm);brand.appendChild(bmeta);
     side.appendChild(brand);
     side.appendChild(searchWrap);
+    side.appendChild(navHost);
+    sideBuilt=true;
+  }
+  function renderSideNav(){
+    ensureSideChrome();
+    navHost.innerHTML="";
     for(const g of SETTINGS_GROUPS){
       const items=g.ids.map(id=>[id,SETTINGS_MAP[id]]).filter(([id,name])=>name&&(!filter||name.toLowerCase().includes(filter)));
       if(!items.length)continue;
-      side.appendChild(h("div","set-group-label",g.title));
+      navHost.appendChild(h("div","set-group-label",g.title));
       for(const[id,name]of items){
         const b=h("button","si"+(id===cur?" cur":""),`<span class="sic" style="background:${SET_COLORS[id]||"#8a97a8"}">${setGlyph(id)}</span><span>${name}</span>`);
-        b.onclick=()=>{cur=id;renderSide();renderPanel()};
-        side.appendChild(b);
+        b.type="button";
+        b.onclick=(ev)=>{
+          ev.preventDefault();ev.stopPropagation();
+          if(id===cur)return;
+          cur=id;
+          navHost.querySelectorAll(".si").forEach(x=>x.classList.remove("cur"));
+          b.classList.add("cur");
+          renderPanel();
+        };
+        navHost.appendChild(b);
       }
     }
   }
-  const sv=()=>{applyS();saveS()};
-  function sec(t){
-    groupEl=null;
-    inner.appendChild(h("div","sh",t));
-  }
+  function renderSide(){renderSideNav()}
+  const sv=()=>{try{applyS();saveS()}catch(e){}};
+  function sec(tt){groupEl=null;inner.appendChild(h("div","sh",tt))}
   function addRow(row){
-    if(!groupEl){
-      groupEl=h("div","set-group");
-      inner.appendChild(groupEl);
-    }
+    if(!groupEl){groupEl=h("div","set-group");inner.appendChild(groupEl)}
     groupEl.appendChild(row);
   }
-  // Patch ctlRow destination inside settings
   const _ctlRow=ctlRow;
   function sRow(label,ctl,hint){const r=_ctlRow(label,ctl,hint);addRow(r);return r}
   async function renderPanel(){
+    const my=++panelToken;
+    try{
     inner.innerHTML="";groupEl=null;
+    if(my!==panelToken)return;
     const p=SETTINGS_INDEX.find(x=>x[0]===cur)||SETTINGS_INDEX[0];
     const head=h("div","set-panel-head");
     head.innerHTML=`<span class="sic" style="background:${SET_COLORS[p[0]]||"#8a97a8"}">${setGlyph(p[0])}</span>
@@ -5949,7 +6028,7 @@ function mountSettings(win,args={}){
         3. Se valida que sea NoteOS y una versión más nueva.<br>
         4. Se aplica el sistema nuevo; tus datos locales se conservan.<br>
         5. Opcional: guarda el .html en disco para tener el archivo actualizado.<br><br>
-        <span style="color:var(--muted)">Manifiesto de ejemplo:<br><code style="font-size:11px">{"version":"6.4.4","url":"https://…/NoteOS-6.4.4.html","notes":"Correcciones"}</code></span>`;
+        <span style="color:var(--muted)">Manifiesto de ejemplo:<br><code style="font-size:11px">{"version":"6.5.0","url":"https://…/NoteOS-6.5.0.html","notes":"Correcciones"}</code></span>`;
       inner.appendChild(help);
     }
 
@@ -6170,9 +6249,21 @@ function mountSettings(win,args={}){
         <div class="form-row"><span>Táctil</span><b>${dev.touch?dev.touch+" puntos":"no"}</b></div>
         <div class="form-row"><span>Idioma</span><b>${dev.lang}</b></div>`;
     }
+  }catch(err){
+      console.error("settings panel",err);
+      if(my===panelToken){
+        inner.innerHTML="";
+        const box=h("div","empty-state");
+        box.innerHTML=`<div class="big">⚠️</div><b>No se pudo cargar esta sección</b>`;
+        const sm=h("small");sm.textContent=(err&&err.message)||String(err||"");box.appendChild(sm);
+        const rb=h("button","btn primary sm","Reintentar");rb.type="button";rb.onclick=()=>renderPanel();
+        box.appendChild(rb);inner.appendChild(box);
+      }
+    }
   }
-  renderSide();renderPanel();
-  win.gotoPanel=id=>{cur=id;renderSide();renderPanel()};
+  renderSideNav();
+  renderPanel();
+  win.gotoPanel=id=>{if(id)cur=id;renderSideNav();renderPanel()};
 }
 async function exportBackup(){
   const data={v:1,when:Date.now(),settings:S,users:USERS,alarms:ALARMS,
@@ -6227,7 +6318,7 @@ function pickBestVoice(){
   return pool.slice().sort((a,b)=>score(b)-score(a))[0]||null;
 }
 
-/* Hardware helpers NoteOS 6.4.4 */
+/* Hardware helpers NoteOS 6.5.0 */
 const HW={
   async battery(){
     if(!navigator.getBattery)return null;
@@ -6402,6 +6493,36 @@ const Aura={
     };
     try{rec.start()}catch(e){}
   },
+
+  async generateImage(prompt){
+    const p=String(prompt||"").trim();
+    if(!p)return null;
+    const seed=Math.floor(Math.random()*1e9);
+    const url=`https://image.pollinations.ai/prompt/${encodeURIComponent(p)}?width=1024&height=1024&model=flux&nologo=true&enhance=true&seed=${seed}`;
+    try{
+      const r=await fetch(url,{cache:"no-store"});
+      if(!r.ok)throw new Error("HTTP "+r.status);
+      const blob=await r.blob();
+      if(!blob||blob.size<500)throw new Error("Imagen vacía");
+      const name="Lyra_"+Date.now()+".png";
+      let file=null;
+      try{file=await fsCreate({parentId:"pics",name,kind:"file",mime:blob.type||"image/png",data:blob})}catch(e){}
+      return {file,url:URL.createObjectURL(blob),prompt:p};
+    }catch(e){
+      return {file:null,url,prompt:p,error:e.message};
+    }
+  },
+  isImageRequest(q){
+    const n=q.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+    return /(genera|crea|dibuja|hazme|ilustra|pintame|renderiza).{0,48}(imagen|foto|dibujo|ilustracion|picture|image)|text to image|genera(r)? (una )?imagen|crea(r)? (una )?imagen|^imagen[:\s]/i.test(n);
+  },
+  extractImagePrompt(q){
+    let p=q.replace(/^(lyra[,:]?\s*)/i,"");
+    p=p.replace(/^(por favor[, ]*)?(me )?(puedes |podrias )?/i,"");
+    p=p.replace(/^(genera|crea|dibuja|hazme|ilustra|pintame|renderiza)(\s+(una?|me|la))?\s+(imagen|foto|dibujo|ilustracion)?\s*(de|del|de la|con)?\s*/i,"");
+    p=p.replace(/^imagen[:\s]+/i,"").trim();
+    return p||q;
+  },
   async handleUtterance(q){
     if(this.busy||!q)return;
     this.busy=true;
@@ -6409,7 +6530,39 @@ const Aura={
     this.setState("thinking");
     $("#aura-transcript").textContent=q;
     $("#aura-text").textContent="";
-    // API-first: only minimal system tools pre-check for explicit local commands
+    if(this.isImageRequest(q)){
+      const prompt=this.extractImagePrompt(q);
+      $("#aura-text").textContent="Creando imagen…";
+      try{
+        const res=await this.generateImage(prompt);
+        if(!this.open){this.busy=false;return}
+        this.setState("speaking");
+        const msg=res.file?("Listo. Guardé «"+res.file.name+"» en Fotos."):(res.error?("No se pudo generar: "+res.error):"Imagen generada.");
+        await this.typeReply(msg);
+        if(S.auraSpeak)this.say(res.file?"Imagen lista y guardada en Fotos.":"Imagen lista.");
+        if(res.url&&!res.error){
+          try{
+            const ov=h("div");ov.style.cssText="position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,.75);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px";
+            const im=h("img");im.src=res.url;im.style.cssText="max-width:min(90vw,520px);max-height:70vh;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.5)";
+            const cap=h("div");cap.style.cssText="color:#fff;font-size:13px;text-align:center;max-width:400px";cap.textContent=prompt;
+            const row=h("div");row.style.cssText="display:flex;gap:8px";
+            const b1=h("button","btn primary sm","Abrir Fotos");b1.onclick=()=>{ov.remove();try{WM.open("photos")}catch(e){}};
+            const b2=h("button","btn sm","Cerrar");b2.onclick=()=>ov.remove();
+            row.append(b1,b2);ov.append(im,cap,row);ov.addEventListener("click",e=>{if(e.target===ov)ov.remove()});
+            document.body.appendChild(ov);
+          }catch(e){}
+        }
+        this.busy=false;
+        setTimeout(()=>{if(this.open)this.listen()},1600);
+        return;
+      }catch(e){
+        this.setState("error");
+        $("#aura-text").textContent="No pude generar la imagen. "+(e.message||"");
+        this.busy=false;
+        setTimeout(()=>{if(this.open)this.listen()},2000);
+        return;
+      }
+    }
     const toolHit=await this.trySystemTool(q);
     if(toolHit){
       this.setState("speaking");
@@ -6594,7 +6747,7 @@ Para conversación normal responde texto plano, sin JSON. No inventes datos del 
   },
   drawStart(){
     const cv=$("#aura-canvas");if(cv){cv.style.display="none"}
-    if(!cv)return; return; // 6.4.4: sin anillos ni puntos sobre el orbe
+    if(!cv)return; return; // 6.5.0: sin anillos ni puntos sobre el orbe
     const _skip=true;if(_skip)return;
     const cv2=$("#aura-canvas");if(!cv2)return;
     const ctx=cv.getContext("2d");
@@ -6827,7 +6980,7 @@ function enterShell(first){
   Snd.play("ok");
   if(memMode)setTimeout(()=>toast("NoteOS","Este navegador bloquea el almacenamiento: todo funciona, pero no persistirá al cerrar","🌒",{force:true}),1600);
   if(first)setTimeout(()=>{
-    toast("NoteOS","Hola, "+currentUser.name+" — bienvenido a NoteOS 6.4.4. Ctrl+Espacio busca · Ctrl+M llama a Lyra","🌅");
+    toast("NoteOS","Hola, "+currentUser.name+" — bienvenido a NoteOS 6.5.0. Ctrl+Espacio busca · Ctrl+M llama a Lyra","🌅");
     setTimeout(()=>toast("Lyra","Toca el asistente Lyra (Ctrl+M) y háblame: «abre la música», «tema claro»…","🔮"),2600);
   },900);
   armIdle();
