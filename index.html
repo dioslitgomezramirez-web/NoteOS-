@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#0a0d12">
 <title>NoteOS</title>
 <style>
-/* ============ NoteOS 6.5.3 — Tour Lyra · i18n · Liquid Glass ============ */
+/* ============ NoteOS 6.6 — Ciclo 6 completo · Configuración renovada ============ */
 :root{
   --accent:#3d9e9a; --accent-rgb:61,158,154;
   --accent2:#e8a84a; --accent2-rgb:232,168,74;
@@ -117,7 +117,7 @@ kbd{background:rgba(128,138,152,.2);border-radius:5px;padding:1px 6px;font-size:
 .w-lavanda{background-image:linear-gradient(155deg,#3d3a52 0%,#6a5f7d 45%,#a08ba0 78%,#cbb6bd 100%)}
 .w-marina{background-image:linear-gradient(170deg,#16303c 0%,#28536048 40%,#28535f 41%,#5b8390 78%,#a2bcc2 100%)}
 
-/* NoteOS 6.5.3 — fondos propios */
+/* NoteOS 6.6 — fondos propios */
 .w-lyn{background-image:radial-gradient(140% 100% at 20% 10%,#2a6b6a 0%,#1a3d4a 35%,#0f1c28 70%,#0a1018 100%)}
 .w-aurora{background-image:linear-gradient(165deg,#0f1a2e 0%,#1a3a4a 30%,#2a5c5a 55%,#3d7a6a 80%,#1a3040 100%)}
 .w-nebula{background-image:radial-gradient(120% 90% at 70% 20%,#3a2a5c 0%,#1e1a3a 40%,#12101f 75%,#0a0a12 100%)}
@@ -623,7 +623,7 @@ table.grid-table{border-collapse:collapse;font-size:13px}
 .dicon .ig svg{filter:drop-shadow(0 4px 7px rgba(0,0,0,.4))}
 .spot-item .si svg{width:24px;height:24px}
 .list-row svg{width:22px;height:22px;flex:none}
-/* (settings CSS moved to 6.5.3 block) */
+/* (settings CSS moved to 6.6 block) */
 .sh{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:650;margin:16px 2px 8px}
 .sh:first-of-type{margin-top:2px}
 .color-dot{width:32px;height:32px;border-radius:50%;border:2.5px solid transparent;transition:transform .18s var(--spring),border-color .15s;box-shadow:inset 0 2px 4px rgba(255,255,255,.25),0 2px 6px rgba(0,0,0,.3)}
@@ -644,7 +644,7 @@ table.grid-table{border-collapse:collapse;font-size:13px}
 .lockstyle-card .prev{font-size:24px;line-height:1}
 .lockstyle-card small{color:var(--muted);font-size:11px}
 
-/* ===== NoteOS 6.5.3 — animaciones propias ===== */
+/* ===== NoteOS 6.6 — animaciones propias ===== */
 @keyframes noteIn{from{opacity:0;transform:translateY(20px) scale(.92)}to{opacity:1;transform:none}}
 @keyframes noteOut{to{opacity:0;transform:translateY(12px) scale(.94)}}
 @keyframes dockRise{from{transform:translateY(30px);opacity:0}to{transform:none;opacity:1}}
@@ -712,7 +712,7 @@ input[type=range]{accent-color:var(--accent)}
 
 
 
-/* ========== LIRA 6.5.3 — orbe flotante sin panel ========== */
+/* ========== LIRA 6.6 — orbe flotante sin panel ========== */
 #aura.lyra-overlay{
   position:fixed;inset:0;z-index:95000;
   display:flex;align-items:center;justify-content:center;
@@ -967,7 +967,7 @@ body.is-mobile .desk-only{display:none!important}
 
 /* Settings 6.3 redesign */
 
-/* ===== Configuración 6.5.3 — diseño premium ===== */
+/* ===== Configuración 6.6 — diseño premium ===== */
 .form-row{
   display:flex;align-items:center;justify-content:space-between;gap:16px;
   padding:12px 14px;font-size:13.5px;
@@ -1601,7 +1601,7 @@ body.reduce-motion #lyra-dim-fx .ld-nebula{animation:none}
 
 
 
-/* 6.5.3 performance + fluid UI */
+/* 6.6 performance + fluid UI */
 .win,.dock,.topbar,.glass{
   transform:translateZ(0);
   backface-visibility:hidden;
@@ -1924,6 +1924,82 @@ body.reduce-motion #dim-fx .dim-stars i{animation:none!important}
 
 
 
+
+/* NoteOS 6.6 — Configuración renovada */
+.set-side{
+  width:264px!important;min-width:240px;
+  padding:12px 10px 16px!important;
+  background:linear-gradient(180deg,rgba(128,138,152,.08),rgba(128,138,152,.03));
+  border-right:1px solid var(--hair);
+}
+.light .set-side{background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,.28))}
+.set-brand{padding:10px 10px 14px;margin-bottom:4px}
+.set-brand-meta b{font-size:14px;letter-spacing:.02em}
+.set-brand-meta small{font-size:11px;color:var(--muted)}
+.set-search{
+  padding:10px 12px 10px 36px!important;
+  border-radius:12px!important;
+  transition:box-shadow .2s,border-color .2s,background .2s;
+}
+.set-search:focus{
+  outline:none;
+  border-color:rgba(var(--accent-rgb),.45)!important;
+  box-shadow:0 0 0 3px rgba(var(--accent-rgb),.18);
+  background:rgba(128,138,152,.16)!important;
+}
+.si{
+  padding:9px 11px;border-radius:12px;gap:11px;margin:1px 0;
+  transition:background .15s,transform .12s;
+}
+.si:hover{background:rgba(128,138,152,.12)}
+.si.cur{
+  background:rgba(var(--accent-rgb),.18)!important;
+  box-shadow:inset 3px 0 0 var(--accent);
+  font-weight:600;
+}
+.si.cur .sic{transform:scale(1.06)}
+.set-group-label{padding:12px 12px 5px;opacity:.85}
+.set-main{
+  background:
+    radial-gradient(ellipse 80% 40% at 50% 0%,rgba(var(--accent-rgb),.06),transparent 60%),
+    rgba(128,138,152,.03);
+}
+.set-main-inner{
+  max-width:580px;margin:0 auto;
+  padding:24px 30px 48px;
+  animation:setPanelIn .28s cubic-bezier(.22,1,.36,1);
+}
+@keyframes setPanelIn{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:none}
+}
+.set-panel-head{
+  display:flex;align-items:flex-start;gap:14px;
+  margin:0 0 18px;padding:0 0 16px;
+  border-bottom:1px solid var(--hair);
+}
+.set-panel-head h2{margin:0;font-size:22px;font-weight:600;letter-spacing:-.02em}
+.set-panel-head small{display:block;margin-top:4px;color:var(--muted);font-size:12.5px;line-height:1.45;max-width:420px;font-weight:400}
+.set-group{
+  border-radius:16px;margin-bottom:16px;
+  box-shadow:0 1px 0 rgba(255,255,255,.04);
+}
+.set-group .ctl-row:not(:last-child),
+.set-group .form-row:not(:last-child){border-bottom:1px solid var(--hair)}
+.set-empty-search{
+  padding:28px 16px;text-align:center;color:var(--muted);font-size:13px;
+}
+.set-footer-note{
+  margin-top:28px;padding:14px 16px;border-radius:14px;
+  background:rgba(var(--accent-rgb),.08);border:1px solid rgba(var(--accent-rgb),.18);
+  font-size:12.5px;line-height:1.5;color:var(--muted);
+}
+.set-footer-note b{color:var(--text)}
+@media(max-width:720px){
+  .set-side{width:100%!important;min-width:0;max-height:32vh;border-right:none!important;border-bottom:1px solid var(--hair)}
+  .set-main-inner{padding:16px 14px 32px;max-width:none}
+}
+
 </style>
 </head>
 <body class="reduce-motion-init"><script>document.body.classList.add(matchMedia("(pointer:coarse)").matches&&matchMedia("(max-width:720px)").matches||/iPhone|Android.+Mobile/i.test(navigator.userAgent)?"is-mobile":"is-desktop");</script>
@@ -1986,7 +2062,7 @@ body.reduce-motion #dim-fx .dim-stars i{animation:none!important}
   <div class="dim-core">
     <div class="dim-logo" id="dim-logo"></div>
     <div class="dim-title" id="dim-title">NoteOS</div>
-    <div class="dim-sub" id="dim-sub">Liquid Glass · 6.5.3</div>
+    <div class="dim-sub" id="dim-sub">Liquid Glass · 6.6</div>
     <div class="dim-caption" id="dim-caption"></div>
     <div class="dim-steps" id="dim-steps"></div>
   </div>
@@ -2015,7 +2091,7 @@ body.reduce-motion #dim-fx .dim-stars i{animation:none!important}
     </div>
   </div>
 </div>
-<div id="boot"><div class="logo"><span class="mark"></span>LYNOR</div><div class="bar"><i id="boot-bar"></i></div><div class="msg" id="boot-msg">Iniciando</div><div style="position:absolute;bottom:34px;color:#4a5560;font-size:11px;letter-spacing:.22em;text-transform:uppercase">NoteOS · 6.5.3</div></div>
+<div id="boot"><div class="logo"><span class="mark"></span>LYNOR</div><div class="bar"><i id="boot-bar"></i></div><div class="msg" id="boot-msg">Iniciando</div><div style="position:absolute;bottom:34px;color:#4a5560;font-size:11px;letter-spacing:.22em;text-transform:uppercase">NoteOS · 6.6</div></div>
 
 <div id="setup" class="hidden"><div class="card setup-card">
   <div class="setup-brand">
@@ -2125,10 +2201,10 @@ body.reduce-motion #dim-fx .dim-stars i{animation:none!important}
 <input type="file" id="file-import" multiple class="hidden">
 <script>
 "use strict";
-/* ================= NoteOS 6.5.3 — núcleo ================= */
+/* ================= NoteOS 6.6 — núcleo ================= */
 const LYRA_ORB_SRC="data:image/webp;base64,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";
 
-/* ===== NoteOS 6.5.3 — rendimiento ===== */
+/* ===== NoteOS 6.6 — rendimiento ===== */
 const Perf={
   rafThrottle(fn){
     let locked=false,args=null;
@@ -2170,7 +2246,7 @@ function showShortcuts(){
 
 
 
-/* Session resume 6.5.3 */
+/* Session resume 6.6 */
 function rememberApp(id){
   try{
     if(!id||id==="settings"&&false){}
@@ -2192,7 +2268,7 @@ async function restoreSession(){
 }
 
 
-/* 6.5.3 — pausar trabajo en segundo plano */
+/* 6.6 — pausar trabajo en segundo plano */
 document.addEventListener("visibilitychange",()=>{
   try{
     if(document.hidden){
@@ -2385,6 +2461,17 @@ zh:{
   dock_hint:"桌面"
 }
 };
+
+const SETTINGS_DESC={
+  es:{general:"Información general del equipo y del sistema.",updates:"Busca e instala actualizaciones OTA.",pantalla:"Brillo, escala y opciones de visualización.",sonido:"Volumen y efectos de audio del sistema.",red:"Estado de la red y conectividad.",bluetooth:"Dispositivos Bluetooth cercanos.",almacen:"Espacio usado por archivos y datos locales.",apps:"Aplicaciones instaladas y permisos.",usuarios:"Cuentas locales en este dispositivo.",seguridad:"Privacidad, bloqueo y contraseñas.",fecha:"Reloj, zona horaria e idioma del sistema.",acces:"Opciones para facilitar el uso.",apariencia:"Tema, acento y material Liquid Glass.",personal:"Fondos de escritorio y personalización.",bloqueo:"Pantalla de bloqueo y seguridad visual.",energia:"Batería, bloqueo automático y rendimiento.",ia:"Asistente Lyra: voz, idioma e imágenes.",backup:"Exportar e importar una copia de tus datos.",dev:"Herramientas para desarrollo y depuración.",info:"Acerca de NoteOS y créditos del ciclo 6."},
+  en:{general:"General device and system information.",updates:"Check and install OTA updates.",pantalla:"Brightness, scaling and display options.",sonido:"Volume and system sound effects.",red:"Network status and connectivity.",bluetooth:"Nearby Bluetooth devices.",almacen:"Space used by local files and data.",apps:"Installed apps and permissions.",usuarios:"Local accounts on this device.",seguridad:"Privacy, lock and passwords.",fecha:"Clock, time zone and system language.",acces:"Options that make the system easier to use.",apariencia:"Theme, accent and Liquid Glass material.",personal:"Desktop wallpapers and personalization.",bloqueo:"Lock screen and visual security.",energia:"Battery, auto-lock and performance.",ia:"Lyra assistant: voice, language and images.",backup:"Export and import a copy of your data.",dev:"Developer and debugging tools.",info:"About NoteOS and NoteOS 6 cycle credits."}
+};
+function settingsDesc(id){
+  const lang=(S.lang||"es").slice(0,2);
+  const pack=SETTINGS_DESC[lang]||SETTINGS_DESC.en;
+  return (pack&&pack[id])||(SETTINGS_DESC.es&&SETTINGS_DESC.es[id])||"";
+}
+
 function t(key){
   const lang=(S.lang||"es").slice(0,2);
   const pack=I18N[lang]||I18N.en;
@@ -2445,7 +2532,7 @@ async function sha256(str){
 
 /* ============ Sonido del sistema (sintetizado, real) ============ */
 const Snd={ctx:null,gain:null,_cache:{},
-  /* 6.5.3 — solo clips reales (MyInstants). Sin tonos sintéticos que se mezclan. */
+  /* 6.6 — solo clips reales (MyInstants). Sin tonos sintéticos que se mezclan. */
   ensure(){if(!this.ctx){this.ctx=new (window.AudioContext||window.webkitAudioContext)();this.gain=this.ctx.createGain();this.gain.connect(this.ctx.destination);this.gain.gain.value=S.volume}if(this.ctx.state==="suspended")this.ctx.resume()},
   setVol(v){if(this.gain)this.gain.gain.value=v},
   /* tonos desactivados a propósito: no se usan en UI */
@@ -2505,8 +2592,8 @@ const PLATFORM=(function(){
     mobile,
     desktop:!mobile,
     name: mobile?"AirOS":"NoteOS",
-    version:"6.5.3",
-    full: mobile?"AirOS 6.5.3":"NoteOS 6.5.3"
+    version:"6.6.0",
+    full: mobile?"AirOS 6.6.0":"NoteOS 6.6.0"
   };
 })();
 document.documentElement.classList.add(PLATFORM.mobile?"is-mobile":"is-desktop");
@@ -3021,7 +3108,7 @@ function applyNoteosMarks(){
 }
 
 
-const S_DEF={theme:"dark",accent:"#3d9e9a",wallpaper:"ph-dune1",customWall:null,wallAnimated:false,blur:28,glassA:.55,fontScale:1,iconSize:76,dockSize:54,animSpeed:1,reduceMotion:false,highContrast:false,bigCursor:false,clock24:true,showSeconds:false,lockStyle:"grande",lockColor:"",lockSize:100,lockShowDate:true,lockShowWeather:true,lockWall:"ph-dune1",lockWallImg:null,autoLock:0,brightness:100,night:false,volume:.7,uiSounds:true,dnd:false,dateLong:true,firstDay:1,auraVoiceURI:"",auraSpeak:true,perfMode:false,iconStyle:"normal",iconTint:"#3d9e9a",installed:{},version:"6.5.3",updateUrl:"",updateChannel:"stable",autoCheckUpdates:true,lastUpdateCheck:0,sessionApps:[],focusMode:false,quietHours:false,lang:"es"};
+const S_DEF={theme:"dark",accent:"#3d9e9a",wallpaper:"ph-dune1",customWall:null,wallAnimated:false,blur:28,glassA:.55,fontScale:1,iconSize:76,dockSize:54,animSpeed:1,reduceMotion:false,highContrast:false,bigCursor:false,clock24:true,showSeconds:false,lockStyle:"grande",lockColor:"",lockSize:100,lockShowDate:true,lockShowWeather:true,lockWall:"ph-dune1",lockWallImg:null,autoLock:0,brightness:100,night:false,volume:.7,uiSounds:true,dnd:false,dateLong:true,firstDay:1,auraVoiceURI:"",auraSpeak:true,perfMode:false,iconStyle:"normal",iconTint:"#3d9e9a",installed:{},version:"6.6",updateUrl:"",updateChannel:"stable",autoCheckUpdates:true,lastUpdateCheck:0,sessionApps:[],focusMode:false,quietHours:false,lang:"es"};
 let S={...S_DEF};
 const ACCENTS=[["Teal","#3d9e9a"],["Ámbar","#e8a84a"],["Índigo","#5b7fd4"],["Coral","#e07a6a"],["Salvia","#6aad8a"],["Violeta","#8b7ab8"],["Grafito","#7a8494"]];
 const WALLS=[
@@ -5487,7 +5574,7 @@ function mountPaint(win,args={}){
 
 /* ---- Navegador ---- */
 function mountBrowser(win,args={}){
-  /* NoteOS 6.5.3 — navegador real: iframe + historial + favoritos + proxy de lectura */
+  /* NoteOS 6.6 — navegador real: iframe + historial + favoritos + proxy de lectura */
   win.body.innerHTML="";
   win.body.style.cssText="display:flex;flex-direction:column;min-height:0;background:var(--bg0)";
   const state={tabs:[],cur:-1,history:[],bmarks:[]};
@@ -5774,7 +5861,7 @@ function mountBrowser(win,args={}){
 }
 
 
-/* ========== Tienda NoteOS 6.5.3 — catálogo real ========== */
+/* ========== Tienda NoteOS 6.6 — catálogo real ========== */
 const STORE_ITEMS=[
   {id:"mines",name:"Buscaminas",category:"Juegos",version:"1.2.0",size:"48 KB",developer:"NoteOS Labs",
    desc:"Clásico buscaminas con dificultad ajustable. Marca banderas, abre celdas y supera récords locales.",
@@ -6089,7 +6176,7 @@ function mount2048(win){
 }
 
 
-/* ========== Apps Tienda 6.5.3 — implementaciones reales ========== */
+/* ========== Apps Tienda 6.6 — implementaciones reales ========== */
 function mountTetris(win){
   const W=10,H=20,CELL=22;
   const SHAPES={
@@ -6583,25 +6670,44 @@ function mountSettings(win,args={}){
   const side=h("div","side set-side");hs.appendChild(side);
   const main=h("div","vstack set-main");hs.appendChild(main);
   const inner=h("div","set-main-inner");main.appendChild(inner);
-  let cur=args.panel||"apariencia",filter="";
+  let cur=args.panel||S.lastSettingsPanel||"apariencia",filter="";
   let groupEl=null;
   let panelToken=0;
   let sideBuilt=false;
-  const navHost=h("div");navHost.style.cssText="flex:1;overflow:auto;min-height:0;display:flex;flex-direction:column;gap:2px";
+  let searchTimer=null;
+  const navHost=h("div");navHost.style.cssText="flex:1;overflow:auto;min-height:0;display:flex;flex-direction:column;gap:1px;padding-bottom:8px";
   const searchWrap=h("div","set-search-wrap");
   searchWrap.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>`;
   const search=h("input","set-search");search.type="search";search.placeholder=t("search_settings");
+  search.setAttribute("aria-label",t("search_settings"));
   searchWrap.appendChild(search);
-  search.oninput=()=>{filter=search.value.toLowerCase();renderSideNav()};
+  search.oninput=()=>{
+    clearTimeout(searchTimer);
+    searchTimer=setTimeout(()=>{filter=search.value.trim().toLowerCase();renderSideNav()},120);
+  };
+  search.onkeydown=e=>{
+    if(e.key==="Escape"){search.value="";filter="";renderSideNav();search.blur()}
+    if(e.key==="ArrowDown"){e.preventDefault();const first=navHost.querySelector(".si");if(first)first.focus()}
+  };
+  function goPanel(id){
+    if(!id||id===cur)return;
+    cur=id;
+    try{S.lastSettingsPanel=id;saveS()}catch(e){}
+    navHost.querySelectorAll(".si").forEach(x=>{
+      x.classList.toggle("cur",x.dataset.id===id);
+    });
+    renderPanel();
+    try{main.scrollTop=0}catch(e){}
+  }
   function ensureSideChrome(){
     if(sideBuilt)return;
     side.innerHTML="";
     const brand=h("div","set-brand");
     const bm=makeNoteosMark("md",true);
-    bm.style.width="42px";bm.style.height="42px";bm.style.borderRadius="12px";
+    bm.style.width="44px";bm.style.height="44px";bm.style.borderRadius="13px";
     wireLogoEasterEgg(bm);
     const bmeta=h("div","set-brand-meta");
-    bmeta.innerHTML=`<b>${PLATFORM.name}</b><small>Versión ${PLATFORM.version}</small>`;
+    bmeta.innerHTML=`<b>${PLATFORM.name}</b><small>v${PLATFORM.version}</small>`;
     brand.appendChild(bm);brand.appendChild(bmeta);
     side.appendChild(brand);
     side.appendChild(searchWrap);
@@ -6611,23 +6717,33 @@ function mountSettings(win,args={}){
   function renderSideNav(){
     ensureSideChrome();
     navHost.innerHTML="";
+    let total=0;
     for(const g of settingsGroupsLocalized()){
       const items=g.ids.map(id=>[id,t(id)]).filter(([id,name])=>name&&(!filter||name.toLowerCase().includes(filter)||t(id).toLowerCase().includes(filter)));
       if(!items.length)continue;
       navHost.appendChild(h("div","set-group-label",g.title));
       for(const[id,name]of items){
-        const b=h("button","si"+(id===cur?" cur":""),`<span class="sic" style="background:${SET_COLORS[id]||"#8a97a8"}">${setGlyph(id)}</span><span>${name}</span>`);
-        b.type="button";
-        b.onclick=(ev)=>{
-          ev.preventDefault();ev.stopPropagation();
-          if(id===cur)return;
-          cur=id;
-          navHost.querySelectorAll(".si").forEach(x=>x.classList.remove("cur"));
-          b.classList.add("cur");
-          renderPanel();
+        total++;
+        const b=h("button","si"+(id===cur?" cur":""),`<span class="sic" style="background:${SET_COLORS[id]||"#8a97a8"}">${setGlyph(id)}</span><span style="flex:1;overflow:hidden;text-overflow:ellipsis">${name}</span>`);
+        b.type="button";b.dataset.id=id;
+        b.onclick=(ev)=>{ev.preventDefault();ev.stopPropagation();goPanel(id)};
+        b.onkeydown=e=>{
+          if(e.key==="ArrowDown"||e.key==="ArrowUp"){
+            e.preventDefault();
+            const all=[...navHost.querySelectorAll(".si")];
+            const i=all.indexOf(b);
+            const n=e.key==="ArrowDown"?all[i+1]:all[i-1];
+            if(n)n.focus();
+          }
+          if(e.key==="Enter"||e.key===" "){e.preventDefault();goPanel(id)}
         };
         navHost.appendChild(b);
       }
+    }
+    if(!total){
+      const empty=h("div","set-empty-search");
+      empty.textContent=(S.lang||"es").startsWith("en")?"No settings match your search.":"Ningún ajuste coincide con la búsqueda.";
+      navHost.appendChild(empty);
     }
   }
   function renderSide(){renderSideNav()}
@@ -6642,12 +6758,17 @@ function mountSettings(win,args={}){
   async function renderPanel(){
     const my=++panelToken;
     try{
+    // reinicia animación de entrada
+    inner.style.animation="none";
+    void inner.offsetWidth;
+    inner.style.animation="";
     inner.innerHTML="";groupEl=null;
     if(my!==panelToken)return;
-    const p=[cur,t(cur)]||["general",t("general")];
+    const p=[cur,t(cur)];
     const head=h("div","set-panel-head");
+    const desc=settingsDesc(cur)||PLATFORM.full;
     head.innerHTML=`<span class="sic" style="background:${SET_COLORS[p[0]]||"#8a97a8"}">${setGlyph(p[0])}</span>
-      <div><h2>${p[1]}</h2><small>${PLATFORM.full}</small></div>`;
+      <div><h2>${p[1]}</h2><small>${esc(desc)}</small></div>`;
     inner.appendChild(head);
     if(cur==="apariencia"){
       sec("Tema");
@@ -6805,7 +6926,7 @@ function mountSettings(win,args={}){
         3. Se valida que sea NoteOS y una versión más nueva.<br>
         4. Se aplica el sistema nuevo; tus datos locales se conservan.<br>
         5. Opcional: guarda el .html en disco para tener el archivo actualizado.<br><br>
-        <span style="color:var(--muted)">Manifiesto de ejemplo:<br><code style="font-size:11px">{"version":"6.5.3","url":"https://…/NoteOS-6.5.3.html","notes":"Correcciones"}</code></span>`;
+        <span style="color:var(--muted)">Manifiesto de ejemplo:<br><code style="font-size:11px">{"version":"6.6","url":"https://…/NoteOS-6.6.html","notes":"Correcciones"}</code></span>`;
       inner.appendChild(help);
     }
 
@@ -7033,6 +7154,11 @@ function mountSettings(win,args={}){
         <div class="form-row"><span>Red</span><b>${net.online?(net.type||"en línea")+(net.downlink?" · "+net.downlink+" Mbps":""):"sin conexión"}</b></div>
         <div class="form-row"><span>Táctil</span><b>${dev.touch?dev.touch+" puntos":"no"}</b></div>
         <div class="form-row"><span>Idioma</span><b>${dev.lang}</b></div>`;
+      const foot=h("div","set-footer-note");
+      foot.innerHTML=`<b>NoteOS 6.6</b> — ${(S.lang||"es").startsWith("en")
+        ?"Final release of the NoteOS 6 cycle. Settings redesigned for speed and clarity. Next up: NoteOS 7.0 Redwood."
+        :"Versión final del ciclo NoteOS 6. Configuración renovada para ser más rápida y clara. Próximo: NoteOS 7.0 Redwood."}`;
+      inner.appendChild(foot);
     }
   }catch(err){
       console.error("settings panel",err);
@@ -7048,7 +7174,7 @@ function mountSettings(win,args={}){
   }
   renderSideNav();
   renderPanel();
-  win.gotoPanel=id=>{if(id)cur=id;renderSideNav();renderPanel()};
+  win.gotoPanel=id=>{if(id){cur=id;try{S.lastSettingsPanel=id;saveS()}catch(e){}}renderSideNav();renderPanel();try{main.scrollTop=0}catch(e){}};
 }
 async function exportBackup(){
   const data={v:1,when:Date.now(),settings:S,users:USERS,alarms:ALARMS,
@@ -7103,7 +7229,7 @@ function pickBestVoice(){
   return pool.slice().sort((a,b)=>score(b)-score(a))[0]||null;
 }
 
-/* Hardware helpers NoteOS 6.5.3 */
+/* Hardware helpers NoteOS 6.6 */
 const HW={
   async battery(){
     if(!navigator.getBattery)return null;
@@ -7534,7 +7660,7 @@ Para conversación normal responde texto plano, sin JSON. No inventes datos del 
   },
   drawStart(){
     const cv=$("#aura-canvas");if(cv){cv.style.display="none"}
-    if(!cv)return; return; // 6.5.3: sin anillos ni puntos sobre el orbe
+    if(!cv)return; return; // 6.6: sin anillos ni puntos sobre el orbe
     const _skip=true;if(_skip)return;
     const cv2=$("#aura-canvas");if(!cv2)return;
     const ctx=cv.getContext("2d");
@@ -7767,7 +7893,7 @@ function enterShell(first){
   Snd.play("ok");
   if(memMode)setTimeout(()=>toast("NoteOS","Este navegador bloquea el almacenamiento: todo funciona, pero no persistirá al cerrar","🌒",{force:true}),1600);
   if(first)setTimeout(()=>{
-    toast("NoteOS","Hola, "+currentUser.name+" — bienvenido a NoteOS 6.5.3. Ctrl+Espacio busca · Ctrl+M llama a Lyra","🌅");
+    toast("NoteOS","Hola, "+currentUser.name+" — bienvenido a NoteOS 6.6. Ctrl+Espacio busca · Ctrl+M llama a Lyra","🌅");
     setTimeout(()=>toast("Lyra","Toca el asistente Lyra (Ctrl+M) y háblame: «abre la música», «tema claro»…","🔮"),2600);
   },900);
   armIdle();
