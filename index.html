@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#0a0d12">
 <title>NoteOS</title>
 <style>
-/* ============ NoteOS 6.5.0 — Fluido · Sonido real · Liquid Glass ============ */
+/* ============ NoteOS 6.5.3 — Tour Lyra · i18n · Liquid Glass ============ */
 :root{
   --accent:#3d9e9a; --accent-rgb:61,158,154;
   --accent2:#e8a84a; --accent2-rgb:232,168,74;
@@ -117,7 +117,7 @@ kbd{background:rgba(128,138,152,.2);border-radius:5px;padding:1px 6px;font-size:
 .w-lavanda{background-image:linear-gradient(155deg,#3d3a52 0%,#6a5f7d 45%,#a08ba0 78%,#cbb6bd 100%)}
 .w-marina{background-image:linear-gradient(170deg,#16303c 0%,#28536048 40%,#28535f 41%,#5b8390 78%,#a2bcc2 100%)}
 
-/* NoteOS 6.5.0 — fondos propios */
+/* NoteOS 6.5.3 — fondos propios */
 .w-lyn{background-image:radial-gradient(140% 100% at 20% 10%,#2a6b6a 0%,#1a3d4a 35%,#0f1c28 70%,#0a1018 100%)}
 .w-aurora{background-image:linear-gradient(165deg,#0f1a2e 0%,#1a3a4a 30%,#2a5c5a 55%,#3d7a6a 80%,#1a3040 100%)}
 .w-nebula{background-image:radial-gradient(120% 90% at 70% 20%,#3a2a5c 0%,#1e1a3a 40%,#12101f 75%,#0a0a12 100%)}
@@ -623,7 +623,7 @@ table.grid-table{border-collapse:collapse;font-size:13px}
 .dicon .ig svg{filter:drop-shadow(0 4px 7px rgba(0,0,0,.4))}
 .spot-item .si svg{width:24px;height:24px}
 .list-row svg{width:22px;height:22px;flex:none}
-/* (settings CSS moved to 6.5.0 block) */
+/* (settings CSS moved to 6.5.3 block) */
 .sh{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:650;margin:16px 2px 8px}
 .sh:first-of-type{margin-top:2px}
 .color-dot{width:32px;height:32px;border-radius:50%;border:2.5px solid transparent;transition:transform .18s var(--spring),border-color .15s;box-shadow:inset 0 2px 4px rgba(255,255,255,.25),0 2px 6px rgba(0,0,0,.3)}
@@ -644,7 +644,7 @@ table.grid-table{border-collapse:collapse;font-size:13px}
 .lockstyle-card .prev{font-size:24px;line-height:1}
 .lockstyle-card small{color:var(--muted);font-size:11px}
 
-/* ===== NoteOS 6.5.0 — animaciones propias ===== */
+/* ===== NoteOS 6.5.3 — animaciones propias ===== */
 @keyframes noteIn{from{opacity:0;transform:translateY(20px) scale(.92)}to{opacity:1;transform:none}}
 @keyframes noteOut{to{opacity:0;transform:translateY(12px) scale(.94)}}
 @keyframes dockRise{from{transform:translateY(30px);opacity:0}to{transform:none;opacity:1}}
@@ -712,7 +712,7 @@ input[type=range]{accent-color:var(--accent)}
 
 
 
-/* ========== LIRA 6.5.0 — orbe flotante sin panel ========== */
+/* ========== LIRA 6.5.3 — orbe flotante sin panel ========== */
 #aura.lyra-overlay{
   position:fixed;inset:0;z-index:95000;
   display:flex;align-items:center;justify-content:center;
@@ -967,7 +967,7 @@ body.is-mobile .desk-only{display:none!important}
 
 /* Settings 6.3 redesign */
 
-/* ===== Configuración 6.5.0 — diseño premium ===== */
+/* ===== Configuración 6.5.3 — diseño premium ===== */
 .form-row{
   display:flex;align-items:center;justify-content:space-between;gap:16px;
   padding:12px 14px;font-size:13.5px;
@@ -1430,7 +1430,178 @@ body.reduce-motion #lowbatt-fx .lbf-edge,
 body.reduce-motion #tb-battery.low{animation:none!important}
 body.reduce-motion #lowbatt-fx .lbf-batt-fill{animation:none!important}
 
-/* 6.5.0 performance + fluid UI */
+/* Lyra dimensión — viaje espacial */
+#lyra-dim-fx{
+  position:fixed;inset:0;z-index:100050;display:none;align-items:center;justify-content:center;
+  flex-direction:column;pointer-events:auto;overflow:hidden;
+}
+#lyra-dim-fx.on{display:flex}
+#lyra-dim-fx .ld-veil{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% 100%,rgba(80,40,140,.45) 0%,transparent 50%),
+    radial-gradient(ellipse at 20% 30%,rgba(40,80,180,.25) 0%,transparent 40%),
+    radial-gradient(ellipse at 80% 20%,rgba(120,40,160,.3) 0%,transparent 35%),
+    linear-gradient(180deg,#030018 0%,#0a0528 40%,#000010 100%);
+  opacity:0;transition:opacity 1.2s ease;
+}
+#lyra-dim-fx.on .ld-veil{opacity:1}
+#lyra-dim-fx .ld-nebula{
+  position:absolute;inset:-20%;pointer-events:none;opacity:0;
+  background:
+    radial-gradient(circle at 30% 40%,rgba(140,80,255,.2),transparent 35%),
+    radial-gradient(circle at 70% 60%,rgba(40,180,255,.15),transparent 40%),
+    radial-gradient(circle at 50% 80%,rgba(255,100,180,.12),transparent 30%);
+  animation:ldNebula 12s ease-in-out infinite alternate;
+  transition:opacity 2s;
+}
+#lyra-dim-fx.journey .ld-nebula{opacity:1}
+@keyframes ldNebula{from{transform:scale(1) rotate(0deg)}to{transform:scale(1.15) rotate(8deg)}}
+#lyra-dim-fx .ld-stars{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+#lyra-dim-fx .ld-stars i{
+  position:absolute;border-radius:50%;background:#fff;
+  box-shadow:0 0 6px #c9b6ff;
+}
+#lyra-dim-fx .ld-stars i.streak{
+  border-radius:2px;background:linear-gradient(90deg,transparent,#fff,transparent);
+  box-shadow:none;height:1px!important;
+  animation:ldStreak linear forwards;
+}
+@keyframes ldStreak{
+  from{transform:translateX(0) scaleX(.2);opacity:0}
+  20%{opacity:1}
+  to{transform:translateX(120vw) scaleX(1);opacity:0}
+}
+#lyra-dim-fx .ld-planet{
+  position:absolute;border-radius:50%;pointer-events:none;opacity:0;
+  filter:blur(0.5px);transition:opacity 1.5s,transform 8s linear;
+}
+#lyra-dim-fx.journey .ld-planet{opacity:.85}
+#lyra-dim-fx .ld-tunnel{
+  position:absolute;inset:0;pointer-events:none;display:flex;align-items:center;justify-content:center;
+  perspective:600px;opacity:0;transition:opacity 1s;
+}
+#lyra-dim-fx.warp .ld-tunnel{opacity:1}
+#lyra-dim-fx .ld-ring{
+  position:absolute;border:1px solid rgba(180,160,255,.25);border-radius:50%;
+  animation:ldWarp 2.5s linear infinite;
+}
+@keyframes ldWarp{
+  from{transform:translateZ(0) scale(.2);opacity:0}
+  30%{opacity:.6}
+  to{transform:translateZ(0) scale(2.8);opacity:0}
+}
+#lyra-dim-fx .ld-core{
+  position:relative;z-index:5;display:flex;flex-direction:column;align-items:center;gap:14px;
+  max-width:min(540px,92vw);padding:24px;text-align:center;
+  opacity:0;transform:scale(.4) translateY(60px);
+  transition:opacity 1.4s ease,transform 1.6s cubic-bezier(.22,1.15,.36,1);
+  pointer-events:auto;
+}
+#lyra-dim-fx.reveal .ld-core{opacity:1;transform:scale(1) translateY(0)}
+#lyra-dim-fx .ld-orb{
+  width:150px;height:150px;border-radius:50%;object-fit:cover;
+  box-shadow:0 0 80px rgba(160,120,255,.65),0 0 120px rgba(100,180,255,.3),0 24px 50px rgba(0,0,0,.5);
+  animation:ldOrbFloat 4s ease-in-out infinite;
+}
+@keyframes ldOrbFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-14px) scale(1.03)}}
+#lyra-dim-fx .ld-title{
+  font-size:32px;font-weight:200;letter-spacing:.18em;color:#f0e8ff;
+  text-shadow:0 0 40px rgba(180,140,255,.7);
+}
+#lyra-dim-fx .ld-sub{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(200,180,255,.65)}
+#lyra-dim-fx .ld-text{
+  font-size:16px;line-height:1.65;color:rgba(240,235,255,.95);
+  max-height:22vh;overflow:hidden;text-align:center;padding:8px 10px;
+  user-select:text;opacity:0;transition:opacity .6s,transform .6s;
+  transform:translateY(10px);min-height:4.5em;font-weight:300;
+}
+#lyra-dim-fx.speaking .ld-text{opacity:1;transform:none}
+#lyra-dim-fx .ld-chip{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 14px;border-radius:999px;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:#e8dcff;
+  background:rgba(160,120,255,.18);border:1px solid rgba(200,170,255,.28);
+  opacity:0;transform:scale(.9);transition:opacity .5s,transform .5s;
+}
+#lyra-dim-fx.reveal .ld-chip{opacity:1;transform:none}
+#lyra-dim-fx .ld-dots{display:flex;gap:7px;justify-content:center;margin-top:2px}
+#lyra-dim-fx .ld-dots b{
+  width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.22);
+  transition:transform .3s,background .3s,width .3s;
+}
+#lyra-dim-fx .ld-dots b.on{background:#c9b4ff;width:18px;border-radius:6px}
+#lyra-dim-fx .ld-actions{
+  display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:4px;
+  opacity:0;transition:opacity .7s;
+}
+#lyra-dim-fx.reveal .ld-actions{opacity:1}
+#lyra-dim-fx .ld-nav,#lyra-dim-fx .ld-close{
+  padding:10px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.08);color:#fff;cursor:pointer;font-size:13px;
+}
+#lyra-dim-fx .ld-nav.primary{background:rgba(150,110,255,.45);border-color:rgba(200,170,255,.4)}
+#lyra-dim-fx .ld-nav:hover,#lyra-dim-fx .ld-close:hover{background:rgba(255,255,255,.18)}
+#lyra-dim-fx .ld-visual{
+  position:absolute;inset:0;pointer-events:none;z-index:3;
+}
+#lyra-dim-fx.scene-voice .ld-orb{box-shadow:0 0 90px rgba(80,180,255,.8),0 0 140px rgba(120,80,255,.4)}
+#lyra-dim-fx.scene-image .ld-nebula{
+  background:
+    radial-gradient(circle at 40% 30%,rgba(255,180,80,.28),transparent 40%),
+    radial-gradient(circle at 70% 60%,rgba(255,80,160,.22),transparent 40%),
+    radial-gradient(circle at 50% 80%,rgba(140,80,255,.2),transparent 30%);
+}
+#lyra-dim-fx.scene-apps .ld-veil{
+  background:
+    radial-gradient(ellipse at 50% 40%,rgba(40,180,160,.28) 0%,transparent 50%),
+    linear-gradient(180deg,#030018 0%,#041018 50%,#000010 100%);
+}
+#lyra-dim-fx.scene-end .ld-orb{animation:ldOrbFloat 5s ease-in-out infinite;filter:saturate(1.15)}
+#lyra-dim-fx .ld-spark{
+  position:absolute;width:4px;height:4px;border-radius:50%;background:#fff;
+  box-shadow:0 0 10px #fff;animation:ldSpark 1.6s ease-out forwards;
+}
+@keyframes ldSpark{
+  0%{opacity:0;transform:translate(0,0) scale(.3)}
+  20%{opacity:1}
+  100%{opacity:0;transform:translate(var(--sx),var(--sy)) scale(0)}
+}
+#lyra-dim-fx .ld-app-tile{
+  position:absolute;width:46px;height:46px;border-radius:12px;
+  background:rgba(255,255,255,.12);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;font-size:22px;
+  animation:ldTileIn .7s cubic-bezier(.22,1.2,.36,1) forwards;
+  opacity:0;
+}
+@keyframes ldTileIn{to{opacity:1;transform:translateY(0)}}
+#lyra-dim-fx .ld-voice-ring{
+  position:absolute;left:50%;top:42%;width:180px;height:180px;margin:-90px 0 0 -90px;
+  border-radius:50%;border:1.5px solid rgba(160,200,255,.35);
+  animation:ldVoiceRing 2s ease-out infinite;
+  pointer-events:none;
+}
+@keyframes ldVoiceRing{
+  0%{transform:scale(.7);opacity:.7}
+  100%{transform:scale(1.45);opacity:0}
+}
+
+#lyra-dim-fx .ld-status{
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(180,200,255,.7);
+  min-height:16px;opacity:0;transition:opacity .5s;
+}
+#lyra-dim-fx.journey .ld-status{opacity:1}
+#lyra-dim-fx .ld-close{
+  margin-top:6px;padding:10px 22px;border-radius:999px;border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.08);color:#fff;cursor:pointer;font-size:13px;
+}
+body.reduce-motion #lyra-dim-fx .ld-orb{animation:none}
+body.reduce-motion #lyra-dim-fx .ld-nebula{animation:none}
+
+
+
+/* 6.5.3 performance + fluid UI */
 .win,.dock,.topbar,.glass{
   transform:translateZ(0);
   backface-visibility:hidden;
@@ -1697,6 +1868,33 @@ body.reduce-motion #lyra-drop::before{animation:none!important;opacity:.4}
 #dim-fx.on .dim-sub{
   animation:dimTitleIn .8s cubic-bezier(.22,1.25,.36,1) 1.05s forwards;
 }
+#dim-fx .dim-caption{
+  max-width:min(420px,86vw);text-align:center;margin-top:8px;
+  font-size:14px;line-height:1.55;color:rgba(220,240,238,.88);
+  opacity:0;transform:translateY(12px);font-weight:300;
+}
+#dim-fx.on .dim-caption{
+  animation:dimTitleIn .9s cubic-bezier(.22,1.25,.36,1) 1.45s forwards;
+}
+#dim-fx .dim-steps{display:flex;gap:6px;margin-top:10px;opacity:0}
+#dim-fx.on .dim-steps{animation:dimTitleIn .7s ease 1.8s forwards}
+#dim-fx .dim-steps i{
+  width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.25);
+}
+#dim-fx .dim-steps i.on{background:#7ee8de;box-shadow:0 0 8px #7ee8de}
+#dim-fx.warp .dim-veil{
+  background:radial-gradient(ellipse 80% 70% at 50% 50%,#123038 0%,#020508 75%);
+}
+#dim-fx .dim-comet{
+  position:absolute;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,transparent,#c8fff6);
+  animation:dimComet .9s linear forwards;
+}
+@keyframes dimComet{
+  from{transform:translateX(-20vw);opacity:0}
+  20%{opacity:1}
+  to{transform:translateX(120vw);opacity:0}
+}
 #dim-fx .dim-particles{
   position:absolute;inset:0;pointer-events:none;overflow:hidden;
 }
@@ -1787,12 +1985,37 @@ body.reduce-motion #dim-fx .dim-stars i{animation:none!important}
   <div class="dim-particles" id="dim-particles"></div>
   <div class="dim-core">
     <div class="dim-logo" id="dim-logo"></div>
-    <div class="dim-title">NoteOS</div>
-    <div class="dim-sub">Liquid Glass · 6.5.0</div>
+    <div class="dim-title" id="dim-title">NoteOS</div>
+    <div class="dim-sub" id="dim-sub">Liquid Glass · 6.5.3</div>
+    <div class="dim-caption" id="dim-caption"></div>
+    <div class="dim-steps" id="dim-steps"></div>
   </div>
 </div>
 
-<div id="boot"><div class="logo"><span class="mark"></span>LYNOR</div><div class="bar"><i id="boot-bar"></i></div><div class="msg" id="boot-msg">Iniciando</div><div style="position:absolute;bottom:34px;color:#4a5560;font-size:11px;letter-spacing:.22em;text-transform:uppercase">NoteOS · 6.5.0</div></div>
+
+<div id="lyra-dim-fx" aria-hidden="true">
+  <div class="ld-veil"></div>
+  <div class="ld-nebula"></div>
+  <div class="ld-stars" id="ld-stars"></div>
+  <div class="ld-tunnel" id="ld-tunnel"></div>
+  <div class="ld-planets" id="ld-planets"></div>
+  <div class="ld-visual" id="ld-visual"></div>
+  <div class="ld-core">
+    <img class="ld-orb" id="ld-orb" alt="Lyra" draggable="false"/>
+    <div class="ld-title">Lyra</div>
+    <div class="ld-sub" id="ld-sub">Asistente · NoteOS</div>
+    <div class="ld-status" id="ld-status"></div>
+    <div class="ld-chip" id="ld-chip"></div>
+    <div class="ld-text" id="ld-text"></div>
+    <div class="ld-dots" id="ld-dots"></div>
+    <div class="ld-actions">
+      <button type="button" class="ld-nav" id="ld-prev">←</button>
+      <button type="button" class="ld-nav primary" id="ld-next">→</button>
+      <button type="button" class="ld-close" id="ld-close">Cerrar</button>
+    </div>
+  </div>
+</div>
+<div id="boot"><div class="logo"><span class="mark"></span>LYNOR</div><div class="bar"><i id="boot-bar"></i></div><div class="msg" id="boot-msg">Iniciando</div><div style="position:absolute;bottom:34px;color:#4a5560;font-size:11px;letter-spacing:.22em;text-transform:uppercase">NoteOS · 6.5.3</div></div>
 
 <div id="setup" class="hidden"><div class="card setup-card">
   <div class="setup-brand">
@@ -1902,10 +2125,10 @@ body.reduce-motion #dim-fx .dim-stars i{animation:none!important}
 <input type="file" id="file-import" multiple class="hidden">
 <script>
 "use strict";
-/* ================= NoteOS 6.5.0 — núcleo ================= */
+/* ================= NoteOS 6.5.3 — núcleo ================= */
 const LYRA_ORB_SRC="data:image/webp;base64,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";
 
-/* ===== NoteOS 6.5.0 — rendimiento ===== */
+/* ===== NoteOS 6.5.3 — rendimiento ===== */
 const Perf={
   rafThrottle(fn){
     let locked=false,args=null;
@@ -1947,7 +2170,7 @@ function showShortcuts(){
 
 
 
-/* Session resume 6.5.0 */
+/* Session resume 6.5.3 */
 function rememberApp(id){
   try{
     if(!id||id==="settings"&&false){}
@@ -1969,7 +2192,7 @@ async function restoreSession(){
 }
 
 
-/* 6.5.0 — pausar trabajo en segundo plano */
+/* 6.5.3 — pausar trabajo en segundo plano */
 document.addEventListener("visibilitychange",()=>{
   try{
     if(document.hidden){
@@ -2000,14 +2223,213 @@ function alignDesktopIcons(){
   }catch(e){}
 }
 
+
+/* ===== i18n NoteOS — sistema completo según S.lang ===== */
+const I18N={
+es:{
+  settings:"Configuración",apps:"Aplicaciones",files:"Archivos",notes:"Notas",browser:"Navegador",
+  music:"Música",photos:"Fotos",store:"Tienda",calc:"Calculadora",calendar:"Calendario",
+  lock:"Bloquear",unlock:"Desbloquear",search:"Buscar",cancel:"Cancelar",save:"Guardar",
+  close:"Cerrar",open:"Abrir",back:"Atrás",done:"Hecho",delete:"Eliminar",
+  general:"Sistema",updates:"Actualizaciones",pantalla:"Pantalla y brillo",sonido:"Sonido",
+  red:"Red y Wi‑Fi",bluetooth:"Bluetooth",almacen:"Almacenamiento",usuarios:"Usuarios",
+  seguridad:"Seguridad y privacidad",fecha:"Fecha, hora e idioma",acces:"Accesibilidad",
+  apariencia:"Apariencia",personal:"Personalización y fondos",bloqueo:"Pantalla de bloqueo",
+  energia:"Energía y bloqueo",ia:"Asistente Lyra",backup:"Copias de seguridad",dev:"Desarrollo",
+  info:"Información del sistema",
+  g_sistema:"Sistema",g_perso:"Personalización",g_red:"Red e Internet",g_apps:"Aplicaciones y datos",
+  g_cuenta:"Cuenta y seguridad",g_lira:"Lira",g_acerca:"Acerca de",
+  welcome:"Bienvenido",search_settings:"Buscar ajuste…",
+  lang_label:"Idioma",lang_hint:"Todo el sistema y Lyra se adaptan a este idioma",
+  notifs:"Notificaciones",clear_all:"Borrar todas",no_notifs:"No hay notificaciones.",
+  dock_hint:"Escritorio",
+  boot1:"Iniciando el núcleo…",boot2:"Montando archivos…",boot3:"Cargando aplicaciones…",boot4:"Preparando la interfaz…",boot5:"Listo",
+  lyra_err:"No pude contactar con Lyra. Comprueba tu conexión.",
+  lyra_img_err:"No pude generar la imagen.",
+  done:"Hecho.",opening:"Abriendo",
+  terminal:"Terminal",monitor:"Monitor",textedit:"Editor de texto",docs:"Documentos",
+  sheet:"Hoja de cálculo",slides:"Presentaciones",clock:"Reloj",contacts:"Contactos",
+  weather:"Clima",camera:"Cámara",paint:"Pinceles",code:"Código"
+},
+en:{
+  settings:"Settings",apps:"Apps",files:"Files",notes:"Notes",browser:"Browser",
+  music:"Music",photos:"Photos",store:"Store",calc:"Calculator",calendar:"Calendar",
+  lock:"Lock",unlock:"Unlock",search:"Search",cancel:"Cancel",save:"Save",
+  close:"Close",open:"Open",back:"Back",done:"Done",delete:"Delete",
+  general:"System",updates:"Updates",pantalla:"Display & brightness",sonido:"Sound",
+  red:"Network & Wi‑Fi",bluetooth:"Bluetooth",almacen:"Storage",usuarios:"Users",
+  seguridad:"Security & privacy",fecha:"Date, time & language",acces:"Accessibility",
+  apariencia:"Appearance",personal:"Personalization & wallpapers",bloqueo:"Lock screen",
+  energia:"Battery & lock",ia:"Lyra assistant",backup:"Backups",dev:"Developer",
+  info:"System information",
+  g_sistema:"System",g_perso:"Personalization",g_red:"Network",g_apps:"Apps & data",
+  g_cuenta:"Account & security",g_lira:"Lyra",g_acerca:"About",
+  welcome:"Welcome",search_settings:"Search settings…",
+  lang_label:"Language",lang_hint:"The whole system and Lyra adapt to this language",
+  notifs:"Notifications",clear_all:"Clear all",no_notifs:"No notifications.",
+  dock_hint:"Desktop",
+  boot1:"Starting the kernel…",boot2:"Mounting files…",boot3:"Loading apps…",boot4:"Preparing the interface…",boot5:"Ready",
+  lyra_err:"I couldn't reach Lyra. Check your connection.",
+  lyra_img_err:"I couldn't generate the image.",
+  done:"Done.",opening:"Opening",
+  terminal:"Terminal",monitor:"Monitor",textedit:"Text editor",docs:"Documents",
+  sheet:"Spreadsheet",slides:"Presentations",clock:"Clock",contacts:"Contacts",
+  weather:"Weather",camera:"Camera",paint:"Brushes",code:"Code"
+},
+pt:{
+  settings:"Definições",apps:"Apps",files:"Ficheiros",notes:"Notas",browser:"Navegador",
+  music:"Música",photos:"Fotos",store:"Loja",calc:"Calculadora",calendar:"Calendário",
+  lock:"Bloquear",unlock:"Desbloquear",search:"Pesquisar",cancel:"Cancelar",save:"Guardar",
+  close:"Fechar",open:"Abrir",back:"Voltar",done:"Concluído",delete:"Eliminar",
+  general:"Sistema",updates:"Atualizações",pantalla:"Ecrã e brilho",sonido:"Som",
+  red:"Rede e Wi‑Fi",bluetooth:"Bluetooth",almacen:"Armazenamento",usuarios:"Utilizadores",
+  seguridad:"Segurança e privacidade",fecha:"Data, hora e idioma",acces:"Acessibilidade",
+  apariencia:"Aparência",personal:"Personalização e fundos",bloqueo:"Ecrã de bloqueio",
+  energia:"Bateria e bloqueio",ia:"Assistente Lyra",backup:"Cópias de segurança",dev:"Programador",
+  info:"Informação do sistema",
+  g_sistema:"Sistema",g_perso:"Personalização",g_red:"Rede",g_apps:"Apps e dados",
+  g_cuenta:"Conta e segurança",g_lira:"Lyra",g_acerca:"Acerca de",
+  welcome:"Bem-vindo",search_settings:"Pesquisar definição…",
+  lang_label:"Idioma",lang_hint:"O sistema e a Lyra adaptam-se a este idioma",
+  notifs:"Notificações",clear_all:"Apagar todas",no_notifs:"Sem notificações.",
+  dock_hint:"Ambiente de trabalho"
+},
+fr:{
+  settings:"Réglages",apps:"Apps",files:"Fichiers",notes:"Notes",browser:"Navigateur",
+  music:"Musique",photos:"Photos",store:"Store",calc:"Calculatrice",calendar:"Calendrier",
+  lock:"Verrouiller",unlock:"Déverrouiller",search:"Rechercher",cancel:"Annuler",save:"Enregistrer",
+  close:"Fermer",open:"Ouvrir",back:"Retour",done:"OK",delete:"Supprimer",
+  general:"Système",updates:"Mises à jour",pantalla:"Affichage et luminosité",sonido:"Son",
+  red:"Réseau et Wi‑Fi",bluetooth:"Bluetooth",almacen:"Stockage",usuarios:"Utilisateurs",
+  seguridad:"Sécurité et confidentialité",fecha:"Date, heure et langue",acces:"Accessibilité",
+  apariencia:"Apparence",personal:"Personnalisation et fonds",bloqueo:"Écran de verrouillage",
+  energia:"Batterie et verrouillage",ia:"Assistante Lyra",backup:"Sauvegardes",dev:"Développeur",
+  info:"Informations système",
+  g_sistema:"Système",g_perso:"Personnalisation",g_red:"Réseau",g_apps:"Apps et données",
+  g_cuenta:"Compte et sécurité",g_lira:"Lyra",g_acerca:"À propos",
+  welcome:"Bienvenue",search_settings:"Rechercher un réglage…",
+  lang_label:"Langue",lang_hint:"Tout le système et Lyra s'adaptent à cette langue",
+  notifs:"Notifications",clear_all:"Tout effacer",no_notifs:"Aucune notification.",
+  dock_hint:"Bureau"
+},
+de:{
+  settings:"Einstellungen",apps:"Apps",files:"Dateien",notes:"Notizen",browser:"Browser",
+  music:"Musik",photos:"Fotos",store:"Store",calc:"Rechner",calendar:"Kalender",
+  lock:"Sperren",unlock:"Entsperren",search:"Suchen",cancel:"Abbrechen",save:"Sichern",
+  close:"Schließen",open:"Öffnen",back:"Zurück",done:"Fertig",delete:"Löschen",
+  general:"System",updates:"Updates",pantalla:"Anzeige & Helligkeit",sonido:"Ton",
+  red:"Netzwerk & WLAN",bluetooth:"Bluetooth",almacen:"Speicher",usuarios:"Benutzer",
+  seguridad:"Sicherheit & Datenschutz",fecha:"Datum, Zeit & Sprache",acces:"Bedienungshilfen",
+  apariencia:"Darstellung",personal:"Personalisierung & Hintergründe",bloqueo:"Sperrbildschirm",
+  energia:"Akku & Sperre",ia:"Lyra-Assistentin",backup:"Backups",dev:"Entwickler",
+  info:"Systeminformationen",
+  g_sistema:"System",g_perso:"Personalisierung",g_red:"Netzwerk",g_apps:"Apps & Daten",
+  g_cuenta:"Konto & Sicherheit",g_lira:"Lyra",g_acerca:"Info",
+  welcome:"Willkommen",search_settings:"Einstellung suchen…",
+  lang_label:"Sprache",lang_hint:"System und Lyra passen sich dieser Sprache an",
+  notifs:"Mitteilungen",clear_all:"Alle löschen",no_notifs:"Keine Mitteilungen.",
+  dock_hint:"Schreibtisch"
+},
+it:{
+  settings:"Impostazioni",apps:"App",files:"File",notes:"Note",browser:"Browser",
+  music:"Musica",photos:"Foto",store:"Store",calc:"Calcolatrice",calendar:"Calendario",
+  lock:"Blocca",unlock:"Sblocca",search:"Cerca",cancel:"Annulla",save:"Salva",
+  close:"Chiudi",open:"Apri",back:"Indietro",done:"Fine",delete:"Elimina",
+  general:"Sistema",updates:"Aggiornamenti",pantalla:"Display e luminosità",sonido:"Suono",
+  red:"Rete e Wi‑Fi",bluetooth:"Bluetooth",almacen:"Archiviazione",usuarios:"Utenti",
+  seguridad:"Sicurezza e privacy",fecha:"Data, ora e lingua",acces:"Accessibilità",
+  apariencia:"Aspetto",personal:"Personalizzazione e sfondi",bloqueo:"Schermata di blocco",
+  energia:"Batteria e blocco",ia:"Assistente Lyra",backup:"Backup",dev:"Sviluppatore",
+  info:"Informazioni di sistema",
+  g_sistema:"Sistema",g_perso:"Personalizzazione",g_red:"Rete",g_apps:"App e dati",
+  g_cuenta:"Account e sicurezza",g_lira:"Lyra",g_acerca:"Informazioni",
+  welcome:"Benvenuto",search_settings:"Cerca impostazione…",
+  lang_label:"Lingua",lang_hint:"Il sistema e Lyra si adattano a questa lingua",
+  notifs:"Notifiche",clear_all:"Cancella tutto",no_notifs:"Nessuna notifica.",
+  dock_hint:"Scrivania"
+},
+ja:{
+  settings:"設定",apps:"アプリ",files:"ファイル",notes:"メモ",browser:"ブラウザ",
+  music:"ミュージック",photos:"写真",store:"ストア",calc:"計算機",calendar:"カレンダー",
+  lock:"ロック",unlock:"ロック解除",search:"検索",cancel:"キャンセル",save:"保存",
+  close:"閉じる",open:"開く",back:"戻る",done:"完了",delete:"削除",
+  general:"システム",updates:"アップデート",pantalla:"画面と明るさ",sonido:"サウンド",
+  red:"ネットワークとWi‑Fi",bluetooth:"Bluetooth",almacen:"ストレージ",usuarios:"ユーザ",
+  seguridad:"セキュリティとプライバシー",fecha:"日付、時刻、言語",acces:"アクセシビリティ",
+  apariencia:"外観",personal:"個人用設定と壁紙",bloqueo:"ロック画面",
+  energia:"バッテリーとロック",ia:"Lyraアシスタント",backup:"バックアップ",dev:"デベロッパ",
+  info:"システム情報",
+  g_sistema:"システム",g_perso:"個人用設定",g_red:"ネットワーク",g_apps:"アプリとデータ",
+  g_cuenta:"アカウントとセキュリティ",g_lira:"Lyra",g_acerca:"情報",
+  welcome:"ようこそ",search_settings:"設定を検索…",
+  lang_label:"言語",lang_hint:"システムと Lyra はこの言語に合わせます",
+  notifs:"通知",clear_all:"すべて消去",no_notifs:"通知はありません。",
+  dock_hint:"デスクトップ"
+},
+zh:{
+  settings:"设置",apps:"应用",files:"文件",notes:"备忘录",browser:"浏览器",
+  music:"音乐",photos:"照片",store:"商店",calc:"计算器",calendar:"日历",
+  lock:"锁定",unlock:"解锁",search:"搜索",cancel:"取消",save:"存储",
+  close:"关闭",open:"打开",back:"返回",done:"完成",delete:"删除",
+  general:"系统",updates:"软件更新",pantalla:"显示与亮度",sonido:"声音",
+  red:"网络与Wi‑Fi",bluetooth:"蓝牙",almacen:"储存空间",usuarios:"用户",
+  seguridad:"安全性与隐私",fecha:"日期、时间与语言",acces:"辅助功能",
+  apariencia:"外观",personal:"个性化与墙纸",bloqueo:"锁定屏幕",
+  energia:"电池与锁定",ia:"Lyra 助手",backup:"备份",dev:"开发者",
+  info:"系统信息",
+  g_sistema:"系统",g_perso:"个性化",g_red:"网络",g_apps:"应用与数据",
+  g_cuenta:"账户与安全性",g_lira:"Lyra",g_acerca:"关于",
+  welcome:"欢迎",search_settings:"搜索设置…",
+  lang_label:"语言",lang_hint:"整个系统和 Lyra 会适配此语言",
+  notifs:"通知",clear_all:"清除全部",no_notifs:"暂无通知。",
+  dock_hint:"桌面"
+}
+};
+function t(key){
+  const lang=(S.lang||"es").slice(0,2);
+  const pack=I18N[lang]||I18N.en;
+  return (pack&&pack[key])||(I18N.en&&I18N.en[key])||(I18N.es&&I18N.es[key])||key;
+}
+function settingsIndexLocalized(){
+  return ["general","updates","pantalla","sonido","red","bluetooth","almacen","apps","usuarios","seguridad","fecha","acces","apariencia","personal","bloqueo","energia","ia","backup","dev","info"]
+    .map(id=>[id,t(id)]);
+}
+function settingsGroupsLocalized(){
+  return [
+    {title:t("g_sistema"),ids:["general","updates","pantalla","sonido","energia","fecha"]},
+    {title:t("g_perso"),ids:["apariencia","personal","bloqueo"]},
+    {title:t("g_red"),ids:["red","bluetooth"]},
+    {title:t("g_apps"),ids:["apps","almacen","backup"]},
+    {title:t("g_cuenta"),ids:["usuarios","seguridad","acces"]},
+    {title:t("g_lira"),ids:["ia"]},
+    {title:t("g_acerca"),ids:["info","dev"]},
+  ];
+}
+function applyLanguage(){
+  try{
+    const lang=(S.lang||"es").slice(0,2);
+    document.documentElement.lang=lang;
+    const ids=["settings","files","notes","browser","music","photos","store","calc","calendar","terminal","monitor","textedit","docs","sheet","slides","clock","contacts","weather","camera","paint","code","lock"];
+    ids.forEach(id=>{
+      if(Apps[id]&&t(id)!==id)Apps[id].name=t(id);
+    });
+    try{renderDock()}catch(e){}
+    try{renderDesktopIcons()}catch(e){}
+    try{
+      const nc=$("#nc-list");if(nc&&!NOTIFS.length)renderNC();
+    }catch(e){}
+    try{updateTbApp()}catch(e){}
+  }catch(e){}
+}
+
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const uid=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
 function h(tag,cls,html){const e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
 function fmtSize(b){if(b==null)return"—";if(b<1024)return b+" B";if(b<1048576)return(b/1024).toFixed(1)+" KB";if(b<1073741824)return(b/1048576).toFixed(1)+" MB";return(b/1073741824).toFixed(2)+" GB"}
-function fmtDate(t){return new Date(t).toLocaleString("es",{day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"})}
-function fmtClock(d,secs){return d.toLocaleTimeString("es",{hour:"2-digit",minute:"2-digit",...(secs?{second:"2-digit"}:{}),hour12:!S.clock24})}
+function fmtDate(t){return new Date(t).toLocaleString(loc(),{day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"})}
+function fmtClock(d,secs){return d.toLocaleTimeString(loc(),{hour:"2-digit",minute:"2-digit",...(secs?{second:"2-digit"}:{}),hour12:!S.clock24})}
 const LS={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
 function debounce(f,ms){let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>f(...a),ms)}}
 function download(name,blob){const a=h("a");a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000)}
@@ -2023,7 +2445,7 @@ async function sha256(str){
 
 /* ============ Sonido del sistema (sintetizado, real) ============ */
 const Snd={ctx:null,gain:null,_cache:{},
-  /* 6.5.0 — solo clips reales (MyInstants). Sin tonos sintéticos que se mezclan. */
+  /* 6.5.3 — solo clips reales (MyInstants). Sin tonos sintéticos que se mezclan. */
   ensure(){if(!this.ctx){this.ctx=new (window.AudioContext||window.webkitAudioContext)();this.gain=this.ctx.createGain();this.gain.connect(this.ctx.destination);this.gain.gain.value=S.volume}if(this.ctx.state==="suspended")this.ctx.resume()},
   setVol(v){if(this.gain)this.gain.gain.value=v},
   /* tonos desactivados a propósito: no se usan en UI */
@@ -2083,8 +2505,8 @@ const PLATFORM=(function(){
     mobile,
     desktop:!mobile,
     name: mobile?"AirOS":"NoteOS",
-    version:"6.5.0",
-    full: mobile?"AirOS 6.5.0":"NoteOS 6.5.0"
+    version:"6.5.3",
+    full: mobile?"AirOS 6.5.3":"NoteOS 6.5.3"
   };
 })();
 document.documentElement.classList.add(PLATFORM.mobile?"is-mobile":"is-desktop");
@@ -2157,6 +2579,319 @@ function makeNoteosMark(sizeClass,tap){
   el.setAttribute("aria-label","NoteOS");
   return el;
 }
+
+/* Lyra dimensión — tour por capítulos */
+const LANG_TTS={es:"es-ES",en:"en-US",pt:"pt-BR",fr:"fr-FR",de:"de-DE",it:"it-IT",ja:"ja-JP",zh:"zh-CN"};
+const LANG_NAME={es:"español",en:"English",pt:"português",fr:"français",de:"Deutsch",it:"italiano",ja:"日本語",zh:"中文"};
+const LYRA_TOUR={
+es:[
+  {id:"hello",icon:"✦",title:"Saludo",text:"Hola. Qué alegría que estés aquí. Soy Lyra, tu asistente en NoteOS."},
+  {id:"voice",icon:"◉",title:"Voz",text:"Actívame con Control M. Habla natural: abrir apps, crear notas, brillo o volumen."},
+  {id:"image",icon:"✧",title:"Imágenes",text:"Dime «genera una imagen de…» y la creo con IA. Se guarda en Fotos."},
+  {id:"apps",icon:"◎",title:"Sistema",text:"Conozco archivos, música, el navegador, la Tienda y Ajustes. Todo queda en tu dispositivo."},
+  {id:"end",icon:"♡",title:"Contigo",text:"No soy solo un botón: soy una presencia. Cuando quieras, cierra esto. Estaré aquí."}
+],
+en:[
+  {id:"hello",icon:"✦",title:"Hello",text:"Hello. I'm so glad you're here. I am Lyra, your assistant in NoteOS."},
+  {id:"voice",icon:"◉",title:"Voice",text:"Wake me with Control M. Speak naturally: open apps, notes, brightness or volume."},
+  {id:"image",icon:"✧",title:"Images",text:"Say “generate an image of…” and I create it with AI. It is saved to Photos."},
+  {id:"apps",icon:"◎",title:"System",text:"I know Files, Music, the real browser, the Store and Settings. Everything stays on your device."},
+  {id:"end",icon:"♡",title:"With you",text:"I am not just a button — I am a presence. Close this when you wish. I'll be here."}
+],
+pt:[
+  {id:"hello",icon:"✦",title:"Olá",text:"Olá. Que alegria teres chegado. Sou a Lyra, a tua assistente no NoteOS."},
+  {id:"voice",icon:"◉",title:"Voz",text:"Ativa-me com Control M. Fala naturalmente: apps, notas, brilho ou volume."},
+  {id:"image",icon:"✧",title:"Imagens",text:"Diz «gera uma imagem de…» e eu crio-a com IA. Fica nas Fotos."},
+  {id:"apps",icon:"◎",title:"Sistema",text:"Conheço ficheiros, música, o navegador, a Loja e as Definições. Tudo no teu dispositivo."},
+  {id:"end",icon:"♡",title:"Contigo",text:"Não sou só um botão: sou uma presença. Fecha quando quiseres. Estarei aqui."}
+],
+fr:[
+  {id:"hello",icon:"✦",title:"Bonjour",text:"Bonjour. Quelle joie que tu sois là. Je suis Lyra, ton assistante dans NoteOS."},
+  {id:"voice",icon:"◉",title:"Voix",text:"Réveille-moi avec Contrôle M. Parle naturellement : apps, notes, luminosité ou volume."},
+  {id:"image",icon:"✧",title:"Images",text:"Dis « génère une image de… » et je la crée avec l'IA. Elle va dans Photos."},
+  {id:"apps",icon:"◎",title:"Système",text:"Je connais Fichiers, Musique, le navigateur, le Store et Réglages. Tout reste sur ton appareil."},
+  {id:"end",icon:"♡",title:"Avec toi",text:"Je ne suis pas qu'un bouton : je suis une présence. Ferme quand tu veux. Je serai là."}
+],
+de:[
+  {id:"hello",icon:"✦",title:"Hallo",text:"Hallo. Schön, dass du hier bist. Ich bin Lyra, deine Assistentin in NoteOS."},
+  {id:"voice",icon:"◉",title:"Stimme",text:"Wecke mich mit Strg M. Sprich natürlich: Apps, Notizen, Helligkeit oder Lautstärke."},
+  {id:"image",icon:"✧",title:"Bilder",text:"Sag „generiere ein Bild von…“ — ich erstelle es mit KI und speichere es in Fotos."},
+  {id:"apps",icon:"◎",title:"System",text:"Ich kenne Dateien, Musik, den Browser, den Store und Einstellungen. Alles bleibt auf deinem Gerät."},
+  {id:"end",icon:"♡",title:"Bei dir",text:"Ich bin nicht nur ein Knopf, sondern eine Präsenz. Schließe, wann du magst. Ich bin hier."}
+],
+it:[
+  {id:"hello",icon:"✦",title:"Ciao",text:"Ciao. Che gioia che tu sia qui. Sono Lyra, la tua assistente in NoteOS."},
+  {id:"voice",icon:"◉",title:"Voce",text:"Attivami con Control M. Parla in modo naturale: app, note, luminosità o volume."},
+  {id:"image",icon:"✧",title:"Immagini",text:"Di «genera un'immagine di…» e la creo con l'IA. La salvo in Foto."},
+  {id:"apps",icon:"◎",title:"Sistema",text:"Conosco File, Musica, il browser, lo Store e Impostazioni. Tutto resta sul tuo dispositivo."},
+  {id:"end",icon:"♡",title:"Con te",text:"Non sono solo un pulsante: sono una presenza. Chiudi quando vuoi. Sarò qui."}
+],
+ja:[
+  {id:"hello",icon:"✦",title:"こんにちは",text:"こんにちは。ここに来てくれてうれしいです。私は Lyra、NoteOS のアシスタントです。"},
+  {id:"voice",icon:"◉",title:"声",text:"Control M で呼んでください。アプリを開く、メモ、明るさや音量——自然に話して。"},
+  {id:"image",icon:"✧",title:"画像",text:"「…の画像を生成して」と言うと、AI で作り、写真に保存します。"},
+  {id:"apps",icon:"◎",title:"システム",text:"ファイル、音楽、ブラウザ、ストア、設定を知っています。すべてはこの端末に残ります。"},
+  {id:"end",icon:"♡",title:"そばに",text:"私はボタンではなく、存在です。閉じて大丈夫。ここにいます。"}
+],
+zh:[
+  {id:"hello",icon:"✦",title:"你好",text:"你好。很高兴你来到这里。我是 Lyra，NoteOS 的助手。"},
+  {id:"voice",icon:"◉",title:"语音",text:"用 Control M 唤醒我。自然说话即可：打开应用、备忘录、亮度或音量。"},
+  {id:"image",icon:"✧",title:"图像",text:"说「生成一张…的图片」，我会用 AI 创作并保存到照片。"},
+  {id:"apps",icon:"◎",title:"系统",text:"我了解文件、音乐、浏览器、商店和设置。一切都留在你的设备上。"},
+  {id:"end",icon:"♡",title:"陪伴",text:"我不只是按钮，而是一种存在。随时可以关闭。我会在。"}
+]
+};
+
+function getLyraLang(){
+  const l=(S.lang||navigator.language||"es").slice(0,2).toLowerCase();
+  return LYRA_TOUR[l]?l:"en";
+}
+
+function loc(){
+  const l=(S.lang||"es").slice(0,2);
+  return ({es:"es",en:"en",pt:"pt-BR",fr:"fr",de:"de",it:"it",ja:"ja",zh:"zh-CN"})[l]||l;
+}
+
+let _lyraTourTok=0;
+function playLyraDimension(){
+  const fx=$("#lyra-dim-fx");if(!fx||fx.classList.contains("on"))return;
+  const lang=getLyraLang();
+  const chapters=LYRA_TOUR[lang]||LYRA_TOUR.en;
+  const reduce=!!S.reduceMotion;
+  const tok=++_lyraTourTok;
+  const orb=$("#ld-orb");
+  if(orb&&typeof LYRA_ORB_SRC!=="undefined")orb.src=LYRA_ORB_SRC;
+  const labels={es:"Asistente · NoteOS",en:"Assistant · NoteOS",pt:"Assistente · NoteOS",fr:"Assistante · NoteOS",de:"Assistentin · NoteOS",it:"Assistente · NoteOS",ja:"アシスタント · NoteOS",zh:"助手 · NoteOS"};
+  const nextLab={es:"Siguiente",en:"Next",pt:"Seguinte",fr:"Suivant",de:"Weiter",it:"Avanti",ja:"次へ",zh:"下一步"};
+  const prevLab={es:"Anterior",en:"Back",pt:"Anterior",fr:"Retour",de:"Zurück",it:"Indietro",ja:"戻る",zh:"上一步"};
+  const closeLab={es:"Cerrar",en:"Close",pt:"Fechar",fr:"Fermer",de:"Schließen",it:"Chiudi",ja:"閉じる",zh:"关闭"};
+  const jump={
+    es:["Iniciando salto…","Nebulosa…","Warp…","Lyra te recibe"],
+    en:["Jump…","Nebula…","Warp…","Lyra welcomes you"],
+    pt:["Salto…","Nebulosa…","Warp…","Lyra recebe-te"],
+    fr:["Saut…","Nébuleuse…","Warp…","Lyra t'accueille"],
+    de:["Sprung…","Nebel…","Warp…","Lyra empfängt dich"],
+    it:["Salto…","Nebulosa…","Warp…","Lyra ti accoglie"],
+    ja:["ジャンプ…","星雲…","ワープ…","Lyra が迎えます"],
+    zh:["跃迁…","星云…","曲速…","Lyra 欢迎你"]
+  };
+  const st=jump[lang]||jump.en;
+  $("#ld-sub")&&($("#ld-sub").textContent=labels[lang]||labels.en);
+  const cl=$("#ld-close"), nx=$("#ld-next"), pv=$("#ld-prev");
+  if(cl)cl.textContent=closeLab[lang]||"Close";
+  if(nx)nx.textContent=nextLab[lang]||"Next";
+  if(pv)pv.textContent=prevLab[lang]||"Back";
+  const te=$("#ld-text");if(te)te.textContent="";
+  const statusEl=$("#ld-status");if(statusEl)statusEl.textContent=st[0];
+  const chip=$("#ld-chip");const vis=$("#ld-visual");const dots=$("#ld-dots");
+
+  const stars=$("#ld-stars");
+  if(stars){
+    stars.innerHTML="";
+    for(let i=0;i<(reduce?20:80);i++){
+      const s=document.createElement("i");
+      s.style.left=(Math.random()*100)+"%";s.style.top=(Math.random()*100)+"%";
+      const sz=0.8+Math.random()*2.4;s.style.width=s.style.height=sz+"px";
+      s.style.opacity=0.25+Math.random()*0.7;stars.appendChild(s);
+    }
+  }
+  const planets=$("#ld-planets");
+  if(planets){
+    planets.innerHTML="";
+    const cols=["#6b5b95","#3d7ea6","#c4785a","#4a9b8e"];
+    for(let i=0;i<(reduce?1:4);i++){
+      const pl=document.createElement("div");pl.className="ld-planet";
+      const size=36+Math.random()*80;
+      pl.style.width=pl.style.height=size+"px";
+      pl.style.left=(8+Math.random()*78)+"%";pl.style.top=(12+Math.random()*68)+"%";
+      pl.style.background=`radial-gradient(circle at 30% 30%,rgba(255,255,255,.4),${cols[i%cols.length]} 50%,#1a1020)`;
+      planets.appendChild(pl);
+    }
+  }
+  const tunnel=$("#ld-tunnel");
+  if(tunnel){
+    tunnel.innerHTML="";
+    for(let i=0;i<(reduce?3:9);i++){
+      const ring=document.createElement("div");ring.className="ld-ring";
+      ring.style.width=ring.style.height=(70+i*30)+"px";
+      ring.style.animationDelay=(i*0.2)+"s";
+      tunnel.appendChild(ring);
+    }
+  }
+
+  let chapter=0;
+  const alive=()=>tok===_lyraTourTok&&fx.classList.contains("on");
+
+  function paintDots(){
+    if(!dots)return;
+    dots.innerHTML="";
+    chapters.forEach((_,i)=>{const b=document.createElement("b");if(i===chapter)b.className="on";dots.appendChild(b)});
+  }
+  function sceneVisual(id){
+    if(!vis)return;
+    vis.innerHTML="";
+    fx.classList.remove("scene-hello","scene-voice","scene-image","scene-apps","scene-end");
+    fx.classList.add("scene-"+id);
+    if(id==="voice"){
+      for(let i=0;i<3;i++){
+        const r=document.createElement("div");r.className="ld-voice-ring";
+        r.style.animationDelay=(i*0.45)+"s";vis.appendChild(r);
+      }
+    }else if(id==="image"){
+      for(let i=0;i<16;i++){
+        const s=document.createElement("div");s.className="ld-spark";
+        s.style.left=(20+Math.random()*60)+"%";s.style.top=(18+Math.random()*50)+"%";
+        s.style.setProperty("--sx",(Math.random()*160-80)+"px");
+        s.style.setProperty("--sy",(Math.random()*160-80)+"px");
+        s.style.animationDelay=(Math.random()*0.6)+"s";
+        vis.appendChild(s);
+      }
+    }else if(id==="apps"){
+      const icons=["📁","🎵","🌐","⚙️","🖼️"];
+      icons.forEach((ic,i)=>{
+        const d=document.createElement("div");d.className="ld-app-tile";
+        d.textContent=ic;
+        const ang=(-90+i*72)*Math.PI/180;
+        d.style.left=`calc(50% + ${Math.cos(ang)*130}px - 23px)`;
+        d.style.top=`calc(38% + ${Math.sin(ang)*70}px)`;
+        d.style.animationDelay=(i*0.08)+"s";
+        vis.appendChild(d);
+      });
+    }
+  }
+  function showChapter(i){
+    if(!alive())return;
+    chapter=Math.max(0,Math.min(chapters.length-1,i));
+    const c=chapters[chapter];
+    paintDots();
+    sceneVisual(c.id);
+    if(chip)chip.textContent=c.icon+"  "+c.title;
+    if(statusEl)statusEl.textContent="";
+    if(te){
+      te.style.opacity="0";
+      te.textContent="";
+      setTimeout(()=>{
+        if(!alive())return;
+        let n=0;const chars=[...c.text];
+        const step=()=>{
+          if(!alive())return;
+          n=Math.min(chars.length,n+(reduce?8:2));
+          te.textContent=chars.slice(0,n).join("");
+          if(n<chars.length)requestAnimationFrame(step);
+        };
+        te.style.opacity="1";
+        step();
+      },120);
+    }
+    if(pv)pv.style.visibility=chapter===0?"hidden":"visible";
+    if(nx)nx.textContent=chapter===chapters.length-1?(closeLab[lang]||"Close"):(nextLab[lang]||"Next");
+    speakLyraBeautiful(c.text,lang,()=>{
+      if(!alive())return;
+      if(chapter<chapters.length-1){
+        setTimeout(()=>{if(alive())showChapter(chapter+1)}, reduce?400:900);
+      }
+    });
+  }
+
+  fx.className="on";
+  fx.setAttribute("aria-hidden","false");
+  try{Snd.play("dimension")}catch(e){}
+
+  const T=reduce?[0,350,800,1200]:[0,900,2200,3800];
+  setTimeout(()=>{if(!alive())return;fx.classList.add("journey");if(statusEl)statusEl.textContent=st[1]},T[1]);
+  setTimeout(()=>{
+    if(!alive())return;
+    fx.classList.add("warp");
+    if(statusEl)statusEl.textContent=st[2];
+    if(stars&&!reduce){
+      for(let i=0;i<14;i++){
+        setTimeout(()=>{
+          if(!alive())return;
+          const s=document.createElement("i");s.className="streak";
+          s.style.left=(-12)+"%";s.style.top=(Math.random()*100)+"%";
+          s.style.width=(90+Math.random()*140)+"px";
+          s.style.animationDuration=(0.4+Math.random()*0.45)+"s";
+          stars.appendChild(s);
+          setTimeout(()=>s.remove(),800);
+        },i*110);
+      }
+    }
+  },T[2]);
+  setTimeout(()=>{
+    if(!alive())return;
+    fx.classList.add("reveal","speaking");
+    fx.classList.remove("warp");
+    if(statusEl)statusEl.textContent=st[3];
+    showChapter(0);
+  },T[3]);
+
+  const close=()=>{
+    _lyraTourTok++;
+    fx.className="";
+    fx.setAttribute("aria-hidden","true");
+    try{speechSynthesis.cancel()}catch(e){}
+    if(vis)vis.innerHTML="";
+  };
+  if(cl)cl.onclick=e=>{e.stopPropagation();close()};
+  if(nx)nx.onclick=e=>{
+    e.stopPropagation();
+    if(chapter>=chapters.length-1){close();return}
+    showChapter(chapter+1);
+  };
+  if(pv)pv.onclick=e=>{e.stopPropagation();showChapter(chapter-1)};
+  fx.onclick=e=>{if(e.target===fx||e.target.classList.contains("ld-veil"))close()};
+}
+
+function pickBeautifulVoice(lang){
+  const vs=speechSynthesis.getVoices()||[];
+  const code=lang||"es";
+  const pool=vs.filter(v=>v.lang&&v.lang.toLowerCase().startsWith(code));
+  const all=pool.length?pool:vs;
+  const score=v=>{
+    let s=0;const n=(v.name||"").toLowerCase();
+    if(/neural|natural|premium|enhanced|wavenet|studio|samantha|karen|moira|tessa|google|microsoft|siri/.test(n))s+=12;
+    if(/female|woman|zira|susan|monica|paulina|elena|joana|amelie|anna/.test(n))s+=6;
+    if(S.auraVoiceURI&&v.voiceURI===S.auraVoiceURI)s+=20;
+    if(v.localService)s+=2;
+    return s;
+  };
+  all.sort((a,b)=>score(b)-score(a));
+  return all[0]||null;
+}
+
+function speakLyraBeautiful(text,lang,onend){
+  try{
+    speechSynthesis.cancel();
+    const utterLang=LANG_TTS[lang]||"en-US";
+    const voice=pickBeautifulVoice(lang);
+    const u=new SpeechSynthesisUtterance(text);
+    u.lang=utterLang;u.rate=0.93;u.pitch=1.07;u.volume=1;
+    if(voice)u.voice=voice;
+    u.onend=()=>{try{onend&&onend()}catch(e){}};
+    u.onerror=()=>{try{onend&&onend()}catch(e){}};
+    const go=()=>speechSynthesis.speak(u);
+    if(!speechSynthesis.getVoices().length){
+      speechSynthesis.onvoiceschanged=()=>{speechSynthesis.onvoiceschanged=null;go()};
+      setTimeout(go,350);
+    }else go();
+  }catch(e){try{onend&&onend()}catch(_){}}
+}
+
+function wireLyraEasterEgg(el){
+  if(!el||el._lyraEgg)return;
+  el._lyraEgg=true;
+  el.style.cursor="pointer";
+  el.title="Lyra";
+  let taps=0,tReset=null;
+  const hit=()=>{
+    taps++;
+    clearTimeout(tReset);
+    tReset=setTimeout(()=>{taps=0},700);
+    if(taps>=3){taps=0;playLyraDimension()}
+  };
+  el.addEventListener("click",e=>{e.stopPropagation();hit()});
+}
+
 function wireLogoEasterEgg(el){
   if(!el||el._eggWired)return;
   el._eggWired=true;
@@ -2176,41 +2911,58 @@ function wireLogoEasterEgg(el){
 function playDimensionFX(){
   const fx=$("#dim-fx");if(!fx||fx.classList.contains("on"))return;
   try{Snd.play("dimension")}catch(e){}
-  // stars
+  const lang=(S.lang||"es").slice(0,2);
+  const caps={
+    es:["Un sistema líquido.","Tus datos, en tu dispositivo.","NoteOS te da la bienvenida."],
+    en:["A liquid system.","Your data stays on your device.","NoteOS welcomes you."],
+    pt:["Um sistema líquido.","Os teus dados, no teu dispositivo.","O NoteOS dá-te as boas-vindas."],
+    fr:["Un système liquide.","Tes données restent sur l'appareil.","NoteOS t'accueille."],
+    de:["Ein flüssiges System.","Deine Daten bleiben auf dem Gerät.","NoteOS heißt dich willkommen."],
+    it:["Un sistema liquido.","I tuoi dati restano sul dispositivo.","NoteOS ti dà il benvenuto."],
+    ja:["リキッドなシステム。","データはこの端末に。","NoteOS へようこそ。"],
+    zh:["液态玻璃系统。","数据留在你的设备。","欢迎来到 NoteOS。"]
+  };
+  const capList=caps[lang]||caps.en;
+  const subEl=$("#dim-sub"), capEl=$("#dim-caption"), titleEl=$("#dim-title"), steps=$("#dim-steps");
+  if(titleEl)titleEl.textContent=PLATFORM.name;
+  if(subEl)subEl.textContent="Liquid Glass · "+PLATFORM.version;
+  if(capEl)capEl.textContent=capList[0];
+  if(steps){
+    steps.innerHTML="";
+    capList.forEach((_,i)=>{const d=document.createElement("i");if(i===0)d.className="on";steps.appendChild(d)});
+  }
   const stars=$("#dim-stars");if(stars){
     stars.innerHTML="";
-    for(let i=0;i<48;i++){
+    for(let i=0;i<72;i++){
       const s=document.createElement("i");
       s.style.left=(Math.random()*100)+"%";
       s.style.top=(Math.random()*100)+"%";
       s.style.animationDelay=(Math.random()*2)+"s";
-      s.style.width=s.style.height=(1+Math.random()*2.5)+"px";
+      s.style.width=s.style.height=(1+Math.random()*2.6)+"px";
       stars.appendChild(s);
     }
   }
-  // tunnel rings
   const tunnel=$("#dim-tunnel");if(tunnel){
     tunnel.innerHTML="";
-    for(let i=0;i<7;i++){
+    for(let i=0;i<10;i++){
       const r=document.createElement("div");
       r.className="dim-ring";
-      const sz=40+i*28;
+      const sz=36+i*30;
       r.style.width=r.style.height=sz+"px";
-      r.style.animationDelay=(i*0.12)+"s";
+      r.style.animationDelay=(i*0.14)+"s";
       tunnel.appendChild(r);
     }
   }
-  // particles burst
   const parts=$("#dim-particles");if(parts){
     parts.innerHTML="";
-    for(let i=0;i<28;i++){
+    for(let i=0;i<36;i++){
       const sp=document.createElement("span");
       const ang=Math.random()*Math.PI*2;
-      const dist=80+Math.random()*220;
+      const dist=90+Math.random()*240;
       sp.style.left="50%";sp.style.top="50%";
       sp.style.setProperty("--dx",(Math.cos(ang)*dist)+"px");
       sp.style.setProperty("--dy",(Math.sin(ang)*dist)+"px");
-      sp.style.animationDelay=(0.3+Math.random()*0.9)+"s";
+      sp.style.animationDelay=(0.25+Math.random()*1.1)+"s";
       parts.appendChild(sp);
     }
   }
@@ -2218,12 +2970,37 @@ function playDimensionFX(){
   if(logo)logo.innerHTML=noteosMarkSVG();
   fx.classList.remove("out");
   void fx.offsetWidth;
-  fx.classList.add("on");
+  fx.classList.add("on","warp");
+  let stepI=0;
+  const tickCap=()=>{
+    stepI++;
+    if(stepI>=capList.length)return;
+    if(capEl)capEl.textContent=capList[stepI];
+    if(steps)[...steps.children].forEach((n,i)=>n.classList.toggle("on",i===stepI));
+  };
   clearTimeout(playDimensionFX._t);
+  clearTimeout(playDimensionFX._t2);
+  clearTimeout(playDimensionFX._t3);
+  const reduce=!!S.reduceMotion;
+  playDimensionFX._t2=setTimeout(tickCap, reduce?600:1800);
+  playDimensionFX._t3=setTimeout(tickCap, reduce?1100:3400);
+  if(stars&&!reduce){
+    for(let i=0;i<10;i++){
+      setTimeout(()=>{
+        const c=document.createElement("div");c.className="dim-comet";
+        c.style.top=(10+Math.random()*80)+"%";
+        c.style.width=(80+Math.random()*160)+"px";
+        c.style.animationDuration=(0.6+Math.random()*0.5)+"s";
+        fx.appendChild(c);
+        setTimeout(()=>c.remove(),900);
+      },400+i*180);
+    }
+  }
   playDimensionFX._t=setTimeout(()=>{
     fx.classList.add("out");
-    setTimeout(()=>{fx.classList.remove("on","out")},600);
-  },S.reduceMotion?1600:3800);
+    fx.classList.remove("warp");
+    setTimeout(()=>{fx.classList.remove("on","out")},700);
+  },reduce?2000:6200);
 }
 function applyNoteosMarks(){
   const tb=$("#tb-logo .logo-n");
@@ -2244,7 +3021,7 @@ function applyNoteosMarks(){
 }
 
 
-const S_DEF={theme:"dark",accent:"#3d9e9a",wallpaper:"ph-dune1",customWall:null,wallAnimated:false,blur:28,glassA:.55,fontScale:1,iconSize:76,dockSize:54,animSpeed:1,reduceMotion:false,highContrast:false,bigCursor:false,clock24:true,showSeconds:false,lockStyle:"grande",lockColor:"",lockSize:100,lockShowDate:true,lockShowWeather:true,lockWall:"ph-dune1",lockWallImg:null,autoLock:0,brightness:100,night:false,volume:.7,uiSounds:true,dnd:false,dateLong:true,firstDay:1,auraVoiceURI:"",auraSpeak:true,perfMode:false,iconStyle:"normal",iconTint:"#3d9e9a",installed:{},version:"6.5.0",updateUrl:"",updateChannel:"stable",autoCheckUpdates:true,lastUpdateCheck:0,sessionApps:[],focusMode:false,quietHours:false};
+const S_DEF={theme:"dark",accent:"#3d9e9a",wallpaper:"ph-dune1",customWall:null,wallAnimated:false,blur:28,glassA:.55,fontScale:1,iconSize:76,dockSize:54,animSpeed:1,reduceMotion:false,highContrast:false,bigCursor:false,clock24:true,showSeconds:false,lockStyle:"grande",lockColor:"",lockSize:100,lockShowDate:true,lockShowWeather:true,lockWall:"ph-dune1",lockWallImg:null,autoLock:0,brightness:100,night:false,volume:.7,uiSounds:true,dnd:false,dateLong:true,firstDay:1,auraVoiceURI:"",auraSpeak:true,perfMode:false,iconStyle:"normal",iconTint:"#3d9e9a",installed:{},version:"6.5.3",updateUrl:"",updateChannel:"stable",autoCheckUpdates:true,lastUpdateCheck:0,sessionApps:[],focusMode:false,quietHours:false,lang:"es"};
 let S={...S_DEF};
 const ACCENTS=[["Teal","#3d9e9a"],["Ámbar","#e8a84a"],["Índigo","#5b7fd4"],["Coral","#e07a6a"],["Salvia","#6aad8a"],["Violeta","#8b7ab8"],["Grafito","#7a8494"]];
 const WALLS=[
@@ -2819,7 +3596,7 @@ async function toggleScreenRec(){
     recRecorder.onstop=async()=>{
       recStream.getTracks().forEach(t=>t.stop());
       const blob=new Blob(chunks,{type:"video/webm"});
-      const f=await fsCreate({parentId:"videos",name:"Grabación "+new Date().toLocaleString("es").replace(/[/:]/g,"-")+".webm",mime:"video/webm",data:blob});
+      const f=await fsCreate({parentId:"videos",name:"Grabación "+new Date().toLocaleString(loc()).replace(/[/:]/g,"-")+".webm",mime:"video/webm",data:blob});
       recRecorder=null;recStream=null;$("#tb-rec").style.display="none";renderCC();
       toast("Grabación de pantalla","Guardada en Vídeos → "+f.name,"●");
     };
@@ -4237,7 +5014,7 @@ function mountTerminal(win){
       print("open: no se encontró «"+a[0]+"»","#c67f76")},
     apps:()=>Object.entries(Apps).filter(([,a])=>!a.hidden).forEach(([id,a])=>print(id.padEnd(12)+" "+a.name)),
     calc:a=>{const r=evalMath(a.join(" "));print(isNaN(r)?"Expresión inválida":String(r))},
-    date:()=>print(new Date().toLocaleString("es",{dateStyle:"full",timeStyle:"medium"})),
+    date:()=>print(new Date().toLocaleString(loc(),{dateStyle:"full",timeStyle:"medium"})),
     whoami:()=>print(currentUser?.name||"invitado"),
     theme:a=>{if(a[0]==="dark"||a[0]==="light"){S.theme=a[0];applyS();print("Tema cambiado a "+a[0])}else print("Uso: theme dark|light")},
     sysinfo:()=>{printHTML(`<span style="color:var(--accent)">      noteos</span>  NoteOS ${S.version}
@@ -4333,7 +5110,7 @@ function mountCamera(win){
     c.getContext("2d").drawImage(video,0,0);
     stage.style.transition="none";stage.style.filter="brightness(2.4)";requestAnimationFrame(()=>{stage.style.transition="filter .35s";stage.style.filter=""});
     const blob=await new Promise(r=>c.toBlob(r,"image/png"));
-    const f=await fsCreate({parentId:"pics",name:"Captura "+new Date().toLocaleString("es").replace(/[/:]/g,"-")+".png",mime:"image/png",data:blob});
+    const f=await fsCreate({parentId:"pics",name:"Captura "+new Date().toLocaleString(loc()).replace(/[/:]/g,"-")+".png",mime:"image/png",data:blob});
     toast("Cámara","Foto guardada en Imágenes","📸");
   };
   win.onClose=()=>{stream&&stream.getTracks().forEach(t=>t.stop())};
@@ -4370,7 +5147,7 @@ function mountRecorder(win){
       rec.onstop=async()=>{
         stream.getTracks().forEach(t=>t.stop());cancelAnimationFrame(raf);clearInterval(ti);actx.close();
         const blob=new Blob(chunks,{type:rec.mimeType||"audio/webm"});
-        await fsCreate({parentId:"musicd",name:"Grabación "+new Date().toLocaleString("es").replace(/[/:]/g,"-")+".webm",mime:"audio/webm",data:blob});
+        await fsCreate({parentId:"musicd",name:"Grabación "+new Date().toLocaleString(loc()).replace(/[/:]/g,"-")+".webm",mime:"audio/webm",data:blob});
         toast("Grabadora","Grabación guardada en Música","🎙️");
         rec=null;btn.textContent="● Grabar";btn.classList.add("primary");btn.classList.remove("danger");time.textContent="00:00";refreshList();
       };
@@ -4710,7 +5487,7 @@ function mountPaint(win,args={}){
 
 /* ---- Navegador ---- */
 function mountBrowser(win,args={}){
-  /* NoteOS 6.5.0 — navegador real: iframe + historial + favoritos + proxy de lectura */
+  /* NoteOS 6.5.3 — navegador real: iframe + historial + favoritos + proxy de lectura */
   win.body.innerHTML="";
   win.body.style.cssText="display:flex;flex-direction:column;min-height:0;background:var(--bg0)";
   const state={tabs:[],cur:-1,history:[],bmarks:[]};
@@ -4997,7 +5774,7 @@ function mountBrowser(win,args={}){
 }
 
 
-/* ========== Tienda NoteOS 6.5.0 — catálogo real ========== */
+/* ========== Tienda NoteOS 6.5.3 — catálogo real ========== */
 const STORE_ITEMS=[
   {id:"mines",name:"Buscaminas",category:"Juegos",version:"1.2.0",size:"48 KB",developer:"NoteOS Labs",
    desc:"Clásico buscaminas con dificultad ajustable. Marca banderas, abre celdas y supera récords locales.",
@@ -5312,7 +6089,7 @@ function mount2048(win){
 }
 
 
-/* ========== Apps Tienda 6.5.0 — implementaciones reales ========== */
+/* ========== Apps Tienda 6.5.3 — implementaciones reales ========== */
 function mountTetris(win){
   const W=10,H=20,CELL=22;
   const SHAPES={
@@ -5813,7 +6590,7 @@ function mountSettings(win,args={}){
   const navHost=h("div");navHost.style.cssText="flex:1;overflow:auto;min-height:0;display:flex;flex-direction:column;gap:2px";
   const searchWrap=h("div","set-search-wrap");
   searchWrap.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>`;
-  const search=h("input","set-search");search.type="search";search.placeholder="Buscar ajuste…";
+  const search=h("input","set-search");search.type="search";search.placeholder=t("search_settings");
   searchWrap.appendChild(search);
   search.oninput=()=>{filter=search.value.toLowerCase();renderSideNav()};
   function ensureSideChrome(){
@@ -5834,8 +6611,8 @@ function mountSettings(win,args={}){
   function renderSideNav(){
     ensureSideChrome();
     navHost.innerHTML="";
-    for(const g of SETTINGS_GROUPS){
-      const items=g.ids.map(id=>[id,SETTINGS_MAP[id]]).filter(([id,name])=>name&&(!filter||name.toLowerCase().includes(filter)));
+    for(const g of settingsGroupsLocalized()){
+      const items=g.ids.map(id=>[id,t(id)]).filter(([id,name])=>name&&(!filter||name.toLowerCase().includes(filter)||t(id).toLowerCase().includes(filter)));
       if(!items.length)continue;
       navHost.appendChild(h("div","set-group-label",g.title));
       for(const[id,name]of items){
@@ -5867,7 +6644,7 @@ function mountSettings(win,args={}){
     try{
     inner.innerHTML="";groupEl=null;
     if(my!==panelToken)return;
-    const p=SETTINGS_INDEX.find(x=>x[0]===cur)||SETTINGS_INDEX[0];
+    const p=[cur,t(cur)]||["general",t("general")];
     const head=h("div","set-panel-head");
     head.innerHTML=`<span class="sic" style="background:${SET_COLORS[p[0]]||"#8a97a8"}">${setGlyph(p[0])}</span>
       <div><h2>${p[1]}</h2><small>${PLATFORM.full}</small></div>`;
@@ -5970,7 +6747,7 @@ function mountSettings(win,args={}){
       const markHost=box.querySelector("#upd-mark");
       if(markHost){const m=makeNoteosMark("lg");markHost.appendChild(m)}
       const status=h("div");status.style.cssText="font-size:13px;color:var(--muted);line-height:1.5;margin:0 0 12px;padding:10px 12px;background:rgba(128,138,152,.1);border-radius:12px";
-      const last=S.lastUpdateCheck?new Date(S.lastUpdateCheck).toLocaleString("es"):"nunca";
+      const last=S.lastUpdateCheck?new Date(S.lastUpdateCheck).toLocaleString(loc()):"nunca";
       status.innerHTML=`Última comprobación: <b style="color:var(--text)">${esc(last)}</b><br>Los datos de usuario (IndexedDB + ajustes) <b style="color:var(--text)">no se borran</b> al actualizar.`;
       inner.appendChild(status);
       const prog=h("div");prog.style.cssText="font-size:13px;color:var(--accent);min-height:20px;margin-bottom:8px";
@@ -5983,7 +6760,7 @@ function mountSettings(win,args={}){
           try{
             const man=await OTA.fetchManifest();
             S.lastUpdateCheck=Date.now();sv();
-            const last2=new Date(S.lastUpdateCheck).toLocaleString("es");
+            const last2=new Date(S.lastUpdateCheck).toLocaleString(loc());
             status.innerHTML=`Última comprobación: <b style="color:var(--text)">${esc(last2)}</b><br>Remoto: <b style="color:var(--text)">v${esc(man.version)}</b>`;
             if(!OTA.isNewer(man.version,PLATFORM.version)){
               prog.textContent="Ya tienes la última versión.";
@@ -6028,7 +6805,7 @@ function mountSettings(win,args={}){
         3. Se valida que sea NoteOS y una versión más nueva.<br>
         4. Se aplica el sistema nuevo; tus datos locales se conservan.<br>
         5. Opcional: guarda el .html en disco para tener el archivo actualizado.<br><br>
-        <span style="color:var(--muted)">Manifiesto de ejemplo:<br><code style="font-size:11px">{"version":"6.5.0","url":"https://…/NoteOS-6.5.0.html","notes":"Correcciones"}</code></span>`;
+        <span style="color:var(--muted)">Manifiesto de ejemplo:<br><code style="font-size:11px">{"version":"6.5.3","url":"https://…/NoteOS-6.5.3.html","notes":"Correcciones"}</code></span>`;
       inner.appendChild(help);
     }
 
@@ -6124,10 +6901,16 @@ function mountSettings(win,args={}){
       }
     }
     if(cur==="fecha"){
+      const loc=S.lang||"es";
       const now=h("div","mono");now.style.cssText="font-size:30px;font-weight:200";
-      const upd=()=>{if(!win.dead&&cur==="fecha")now.textContent=new Date().toLocaleString("es",{dateStyle:"full",timeStyle:"medium"})};
+      const upd=()=>{if(!win.dead&&cur==="fecha")now.textContent=new Date().toLocaleString(loc,{dateStyle:"full",timeStyle:"medium"})};
       upd();setInterval(upd,1000);
       inner.appendChild(now);
+      sec("Idioma del sistema");
+      sRow(t("lang_label"),mkSelect([
+        ["es","Español"],["en","English"],["pt","Português"],["fr","Français"],["de","Deutsch"],["it","Italiano"],["ja","日本語"],["zh","中文"]
+      ],()=>S.lang||"es",v=>{S.lang=v;sv();applyLanguage();renderPanel()}),t("lang_hint"));
+      sec("Reloj");
       sRow("Formato 24 horas",mkSwitch(()=>S.clock24,v=>{S.clock24=v;sv();tickClock()}));
       sRow("Mostrar segundos en la barra",mkSwitch(()=>S.showSeconds,v=>{S.showSeconds=v;sv();tickClock()}));
       inner.appendChild(h("small","",`<span style="color:var(--muted)">Zona horaria: ${Intl.DateTimeFormat().resolvedOptions().timeZone} (del sistema)</span>`));
@@ -6138,7 +6921,7 @@ function mountSettings(win,args={}){
       sRow("Alto contraste",mkSwitch(()=>S.highContrast,v=>{S.highContrast=v;sv()}));
       sRow("Cursor grande",mkSwitch(()=>S.bigCursor,v=>{S.bigCursor=v;sv()}));
       sRow("Escala del texto",mkRange(85,140,()=>S.fontScale,v=>{S.fontScale=v;sv()}));
-      sRow("Leer en voz alta",(()=>{const b=h("button","btn sm","Probar");b.onclick=()=>{const u=new SpeechSynthesisUtterance("Hola, soy NoteOS. La lectura en voz alta funciona.");u.lang="es";speechSynthesis.speak(u)};return b})(),"Usa la síntesis de voz real del sistema");
+      sRow("Leer en voz alta",(()=>{const b=h("button","btn sm","Probar");b.onclick=()=>{const u=new SpeechSynthesisUtterance(t("welcome")+" — "+PLATFORM.name);u.lang=LANG_TTS[(S.lang||"es").slice(0,2)]||"es-ES";const v=pickBeautifulVoice((S.lang||"es").slice(0,2));if(v)u.voice=v;speechSynthesis.speak(u)};return b})(),"Usa la síntesis de voz real del sistema");
     }
     if(cur==="bloqueo"){
       sec("Fotos para bloqueo");
@@ -6201,11 +6984,13 @@ function mountSettings(win,args={}){
     if(cur==="ia"){
       inner.appendChild((()=>{const w=h("div");w.style.cssText="display:flex;align-items:center;gap:16px;margin:4px 0 16px";
         const img=h("img","lyra-settings-orb");img.src=LYRA_ORB_SRC;img.alt="Lyra";
-        const tx=h("div");tx.innerHTML=`<b style="font-size:16px">Lyra</b><br><small style="color:var(--muted)">Asistente de voz de NoteOS</small>`;
+        img.style.cursor="pointer";img.title="Toca 3 veces";
+        wireLyraEasterEgg(img);
+        const tx=h("div");tx.innerHTML=`<b style="font-size:16px">Lyra</b><br><small style="color:var(--muted)">Asistente de voz · toca el orbe 3 veces</small>`;
         w.append(img,tx);return w})());
       inner.appendChild(h("p","",`Lyra es la asistente de voz de NoteOS. Se activa con <b>Ctrl+M</b> (aparece desde arriba como gota de cristal), y escucha por el micrófono real.`)).style.cssText="line-height:1.55;font-size:13.5px;max-width:480px";
       sRow("Respuestas habladas",mkSwitch(()=>S.auraSpeak,v=>{S.auraSpeak=v;sv()}),"Lyra responde con voz además del texto");
-      const voices=speechSynthesis.getVoices().filter(v=>v.lang.startsWith("es"));
+      const voices=speechSynthesis.getVoices().filter(v=>v.lang.startsWith((S.lang||"es").slice(0,2)));
       if(voices.length)sRow("Voz de Lyra",mkSelect(voices.map(v=>[v.voiceURI,v.name]),()=>S.auraVoiceURI||voices[0].voiceURI,v=>{S.auraVoiceURI=v;sv()}));
       sRow("Probar a Lyra",(()=>{const b=h("button","btn primary sm","Abrir Lyra");b.onclick=()=>Aura.openUI();return b})());
       inner.appendChild(h("small","",`<span style="color:var(--muted)">Lyra combina control local del sistema con una IA pública gratuita (Pollinations) para responder cualquier pregunta. El reconocimiento de voz y los comandos del sistema son locales; las preguntas generales usan la API pública desde tu dispositivo. Entiende órdenes del sistema, cálculos, conversiones de unidades, temporizadores, hora mundial y más; si le preguntas algo que no sabe, te lo busca en el navegador.</span>`)).style.maxWidth="480px";
@@ -6318,7 +7103,7 @@ function pickBestVoice(){
   return pool.slice().sort((a,b)=>score(b)-score(a))[0]||null;
 }
 
-/* Hardware helpers NoteOS 6.5.0 */
+/* Hardware helpers NoteOS 6.5.3 */
 const HW={
   async battery(){
     if(!navigator.getBattery)return null;
@@ -6464,7 +7249,7 @@ const Aura={
     $("#aura-transcript").textContent="";
     try{if(this.rec)this.rec.abort()}catch(e){}
     const rec=this.rec=new SR();
-    rec.lang="es-ES";rec.interimResults=true;rec.continuous=false;
+    rec.lang=({es:"es-ES",en:"en-US",pt:"pt-BR",fr:"fr-FR",de:"de-DE",it:"it-IT",ja:"ja-JP",zh:"zh-CN"})[(S.lang||"es").slice(0,2)]||"es-ES";rec.interimResults=true;rec.continuous=false;
     rec.onresult=e=>{
       let interim="",final="";
       for(let i=e.resultIndex;i<e.results.length;i++){
@@ -6557,7 +7342,7 @@ const Aura={
         return;
       }catch(e){
         this.setState("error");
-        $("#aura-text").textContent="No pude generar la imagen. "+(e.message||"");
+        $("#aura-text").textContent=t("lyra_img_err")+" "+(e.message||"");
         this.busy=false;
         setTimeout(()=>{if(this.open)this.listen()},2000);
         return;
@@ -6577,8 +7362,8 @@ const Aura={
     if(reply&&reply.__action){
       const msg=await this.execTool(reply.__action,reply.__args||{});
       this.setState("speaking");
-      await this.typeReply(msg||"Hecho.");
-      if(S.auraSpeak)this.say(msg||"Hecho.");
+      await this.typeReply(msg||t("done"));
+      if(S.auraSpeak)this.say(msg||t("done"));
       this.busy=false;
       setTimeout(()=>{if(this.open)this.listen()},1200);
       return;
@@ -6591,7 +7376,7 @@ const Aura={
       if(this._hist.length>12)this._hist=this._hist.slice(-12);
     }else{
       this.setState("error");
-      $("#aura-text").textContent="No pude contactar con el servicio de Lyra. Comprueba tu conexión.";
+      $("#aura-text").textContent=t("lyra_err");
     }
     this.busy=false;
     setTimeout(()=>{if(this.open&&this.state!=="error")this.listen()}, reply?Math.min(5000,900+(reply||"").length*35):1500);
@@ -6612,7 +7397,7 @@ const Aura={
     // Strict local tools only — explicit system actions. Conversation goes to API.
     const n=q.toLowerCase().normalize("NFD").replace(/\p{M}/gu,"");
     let m;
-    if((m=n.match(/\b(?:abre|abrir|abrela|abre el|abre la)\s+(.+)/))){
+    if((m=n.match(/\b(?:abre|abrir|abrela|abre el|abre la|open|launch)\s+(.+)/))){
       const target=m[1].replace(/por favor|please|configuracion de |ajustes de /g,"").trim();
       // Settings deep-link
       const panelMap={pantalla:"pantalla","brillo":"pantalla",sonido:"sonido",red:"red",wifi:"red",apariencia:"apariencia",tema:"apariencia",bloqueo:"bloqueo",lyra:"ia",lira:"ia",seguridad:"seguridad",usuarios:"usuarios",almacenamiento:"almacen",apps:"apps",aplicaciones:"apps"};
@@ -6621,18 +7406,18 @@ const Aura={
           WM.open("settings",{panel});return "Abriendo Configuración → "+(SETTINGS_MAP[panel]||panel)+".";
         }
       }
-      if(/\b(configuracion|ajustes|preferencias)\b/.test(target)){WM.open("settings");return"Abriendo Configuración."}
+      if(/\b(configuracion|ajustes|preferencias|settings)\b/.test(target)){WM.open("settings");return t("opening")+" "+t("settings")+"."}
       for(const[id,a] of Object.entries(Apps)){
         if(a.hidden||(a.desktopOnly&&PLATFORM.mobile))continue;
         const nm=(a.name||"").toLowerCase().normalize("NFD").replace(/\p{M}/gu,"");
         if(target.includes(nm)||target.includes(id)||(a.words||[]).some(w=>target.includes(w))){
           if(a.store&&!S.installed[id])return a.name+" no está instalada. Ábrela desde la Tienda.";
-          WM.open(id);return "Abriendo "+a.name+".";
+          WM.open(id);return t("opening")+" "+a.name+".";
         }
       }
     }
-    if(/\b(cierra|cerrar) (todo|todas las ventanas)\b/.test(n)){[...WM.wins.values()].forEach(w=>WM.close(w));return"Ventanas cerradas."}
-    if(/\bbloquea(r)? (la )?pantalla\b/.test(n)){setTimeout(()=>lockScreen(),400);return"Bloqueando."}
+    if(/\b(cierra|cerrar|close) (todo|todas las ventanas|all|windows)\b/.test(n)){[...WM.wins.values()].forEach(w=>WM.close(w));return t("done")}
+    if(/\b(bloquea(r)? (la )?pantalla|lock (the )?screen)\b/.test(n)){setTimeout(()=>lockScreen(),400);return t("lock")}
     if(/\b(minimiza|minimizar) (todo|todas)\b/.test(n)){WM.minimizeAll();return"Ventanas minimizadas."}
     if((m=n.match(/\b(?:crea|crear|nueva) (?:una )?nota\b(?:\s+(?:que diga|con|:)?\s*(.+))?/))){
       const body=(m[1]||"").trim();
@@ -6684,11 +7469,13 @@ const Aura={
   },
   async askAI(q){
     const ctx=this.buildContext();
+    const lang=getLyraLang();
+    const spoken=LANG_NAME[lang]||"español";
     const sys=`Eres Lyra, asistente de ${ctx.system} ${ctx.version} (${ctx.platform}).
-Responde en español, clara y concisa (2-5 frases).
-Contexto del sistema (JSON): ${JSON.stringify(ctx)}
+Responde SIEMPRE en ${spoken}, clara y concisa (2-5 frases). Nunca cambies de idioma.
+Contexto del sistema (JSON): ${JSON.stringify({...ctx,lang})}
 Si el usuario pide una acción del sistema, responde SOLO con un JSON de una línea:
-{"action":"open_app|create_note|set_volume|set_brightness|create_file","args":{...},"say":"mensaje breve al usuario"}
+{"action":"open_app|create_note|set_volume|set_brightness|create_file","args":{...},"say":"mensaje breve al usuario en ${spoken}"}
 Acciones: open_app args.appId (files,browser,settings,notes,music,photos,calc,calendar...); create_note title,body; set_volume level 0-100; set_brightness level 35-100; create_file name,content.
 Para conversación normal responde texto plano, sin JSON. No inventes datos del sistema fuera del contexto.`;
     const messages=[{role:"system",content:sys},...this._hist.slice(-6),{role:"user",content:q}];
@@ -6737,8 +7524,8 @@ Para conversación normal responde texto plano, sin JSON. No inventes datos del 
     try{
       speechSynthesis.cancel();
       const u=new SpeechSynthesisUtterance(text);
-      u.lang="es-ES";u.rate=1.02;
-      const vs=speechSynthesis.getVoices().filter(v=>v.lang.startsWith("es"));
+      const _ll=(S.lang||"es").slice(0,2);u.lang=({es:"es-ES",en:"en-US",pt:"pt-BR",fr:"fr-FR",de:"de-DE",it:"it-IT",ja:"ja-JP",zh:"zh-CN"})[_ll]||"es-ES";u.rate=1.02;
+      const vs=speechSynthesis.getVoices().filter(v=>v.lang.startsWith(_ll));
       if(S.auraVoiceURI){const v=vs.find(x=>x.voiceURI===S.auraVoiceURI);if(v)u.voice=v}
       else if(vs[0])u.voice=vs[0];
       u.onend=()=>{if(this.open&&this.state==="speaking")this.setState("listening")};
@@ -6747,7 +7534,7 @@ Para conversación normal responde texto plano, sin JSON. No inventes datos del 
   },
   drawStart(){
     const cv=$("#aura-canvas");if(cv){cv.style.display="none"}
-    if(!cv)return; return; // 6.5.0: sin anillos ni puntos sobre el orbe
+    if(!cv)return; return; // 6.5.3: sin anillos ni puntos sobre el orbe
     const _skip=true;if(_skip)return;
     const cv2=$("#aura-canvas");if(!cv2)return;
     const ctx=cv.getContext("2d");
@@ -6980,7 +7767,7 @@ function enterShell(first){
   Snd.play("ok");
   if(memMode)setTimeout(()=>toast("NoteOS","Este navegador bloquea el almacenamiento: todo funciona, pero no persistirá al cerrar","🌒",{force:true}),1600);
   if(first)setTimeout(()=>{
-    toast("NoteOS","Hola, "+currentUser.name+" — bienvenido a NoteOS 6.5.0. Ctrl+Espacio busca · Ctrl+M llama a Lyra","🌅");
+    toast("NoteOS","Hola, "+currentUser.name+" — bienvenido a NoteOS 6.5.3. Ctrl+Espacio busca · Ctrl+M llama a Lyra","🌅");
     setTimeout(()=>toast("Lyra","Toca el asistente Lyra (Ctrl+M) y háblame: «abre la música», «tema claro»…","🔮"),2600);
   },900);
   armIdle();
@@ -7090,13 +7877,14 @@ async function boot(){
   try{setTimeout(()=>Snd.play("boot"),180)}catch(e){}
   try{await openDB()}catch(e){try{memDBInit()}catch(_){}}
   try{const n=await kvGet("notifs");if(Array.isArray(n))NOTIFS=n}catch(e){}
+  try{applyLanguage()}catch(e){}
   try{await fsInit()}catch(e){console.error("fsInit",e)}
   try{await loadUsers()}catch(e){console.error("loadUsers",e);USERS=USERS||[]}
   try{await loadAlarms()}catch(e){console.error("loadAlarms",e);ALARMS=ALARMS||[]}
   try{iconPos=(await kvGet("iconPos"))||{}}catch(e){iconPos={}}
   /* progreso de arranque */
   const bar=$("#boot-bar"),msg=$("#boot-msg");
-  const steps=[["Iniciando el núcleo…",.2],["Montando el sistema de archivos…",.45],["Cargando aplicaciones…",.7],["Preparando la interfaz…",.9],["Listo",1]];
+  const steps=[[t("boot1"),.2],[t("boot2"),.45],[t("boot3"),.7],[t("boot4"),.9],[t("boot5"),1]];
   for(const[t,p]of steps){msg.textContent=t;bar.style.width=p*100+"%";await new Promise(r=>setTimeout(r,S.reduceMotion?40:260))}
   /* shell — cada paso aislado para que un fallo no congele el arranque */
   const step=(fn)=>{try{fn()}catch(e){console.error("boot step:",e)}};
